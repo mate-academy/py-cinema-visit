@@ -21,6 +21,7 @@ from app.main import cinema_visit
             '"Tenet" ended.\n'
             'Cleaner Anna is cleaning hall number 1.\n'
 
+
         ),
         (
             [
