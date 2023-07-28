@@ -20,7 +20,7 @@ package create modules:
    cb = CinemaBar()
    customer = Customer("Bob", "popcorn")
    cb.sell_product(customer=customer, product=customer.food)
-   # Cinema bar sold popcorn to Bob.
+   # cinema bar sold popcorn to Bob.
    ```
 
    - `hall.py` - inside this module create `CinemaHall`
@@ -83,8 +83,8 @@ hall_number = 5
 cleaner_name = "Anna"
 movie = "Madagascar"
 cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
-# Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
+# cinema bar sold Coca-cola to Bob.
+# cinema bar sold popcorn to Alex.
 # "Madagascar" started in hall number 5.
 # Bob is watching "Madagascar".
 # Alex is watching "Madagascar".
