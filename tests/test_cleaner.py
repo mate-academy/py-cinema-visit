@@ -8,9 +8,7 @@ from app.people.cinema_staff import Cleaner
 
 def test_cleaner_constructor():
     cleaner = Cleaner(name="James")
-    assert hasattr(cleaner, "name"), (
-        "Cleaner instance should have 'name' attribute"
-    )
+    assert hasattr(cleaner, "name"), "Cleaner instance should have 'name' attribute"
     assert cleaner.name == "James", (
         f"Value of attribute 'name' should equal to 'James' when "
         f"instance is created by 'Cleaner(name='James)'"
