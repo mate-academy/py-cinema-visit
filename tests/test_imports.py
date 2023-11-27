@@ -49,7 +49,7 @@ def test_cleaner_import():
     ), "Class 'Cleaner' should be imported using 'from'"
     assert (
             random_import.names[0].name == "Cleaner"
-    ), "Class 'Cleaner' should be imported from 'cinema_staff' module"
+    ), "Class 'Cleaner' should be imported from 'cinema_staff.py' module"
 
 
 def test_customer_import():
