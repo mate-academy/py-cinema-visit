@@ -16,23 +16,23 @@ package create modules:
    and `customer` - `Customer` instance, that means customer.
    This method prints what product and to whom cinema sold.
    
-   ```python
-   cb = CinemaBar()
-   customer = Customer("Bob", "popcorn")
-   cb.sell_product(customer=customer, product=customer.food)
-   # Cinema bar sold popcorn to Bob.
-   ```
+     ```python
+     cb = CinemaBar()
+     customer = Customer("Bob", "popcorn")
+     cb.sell_product(customer=customer, product=customer.food)
+     # Cinema bar sold popcorn to Bob.
+     ```
 
-   - `hall.py` - inside this module create `CinemaHall`
-   class that describes actions during the movie session. Its
-   `__init__` method takes and stores `number` - number of the hall
-   in cinema.
-   This class should have only one method `movie_session`, that
-   takes `movie_name`, `customers` - list of a customers
-   (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
-   instance). This method prints about movie start, calls 
-   customers method `watch_movie`, prints about movie end,
-   calls cleaner method `clean_hall`.
+     - `hall.py` - inside this module create `CinemaHall`
+     class that describes actions during the movie session. Its
+     `__init__` method takes and stores `number` - number of the hall
+     in cinema.
+     This class should have only one method `movie_session`, that
+     takes `movie_name`, `customers` - list of a customers
+     (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
+     instance). This method prints about movie start, calls 
+     customers method `watch_movie`, prints about movie end,
+     calls cleaner method `clean_hall`.
 2. In directory `app` create package `people`. In this package
    create modules:
    - `customer.py` - inside this module create `Customer` class,
