@@ -59,7 +59,7 @@ from app.main import cinema_visit
         )
     ]
 )
-def test_cinema_visit(customers, hall_number, cleaner, movie, output):
+def test_cinema_visit(customers: object, hall_number: object, cleaner: object, movie: object, output: object) -> object:
     f = io.StringIO()
 
     with redirect_stdout(f):
