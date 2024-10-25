@@ -14,7 +14,8 @@ package create modules:
    This class should have only one static method `sell_product`,
    that takes `product` - name of the product that customer wants
    and `customer` - `Customer` instance, that means customer.
-   This method prints what product and to whom cinema sold.
+   The `sell_product` method sells a product to the customer and displays which product was sold and to whom.
+   
    
    ```python
    cb = CinemaBar()
@@ -25,14 +26,15 @@ package create modules:
 
    - `hall.py` - inside this module create `CinemaHall`
    class that describes actions during the movie session. Its
-   `__init__` method takes and stores `number` - number of the hall
-   in cinema.
+   `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
    This class should have only one method `movie_session`, that
    takes `movie_name`, `customers` - list of a customers
    (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
    instance). This method prints about movie start, calls 
    customers method `watch_movie`, prints about movie end,
-   calls cleaner method `clean_hall`.
+   calls cleaner method `clean_hall`. So, we are expecting
+   that everything listed above will be performed in `movie_session` function.
+
 2. In directory `app` create package `people`. In this package
    create modules:
    - `customer.py` - inside this module create `Customer` class,
@@ -47,7 +49,7 @@ package create modules:
    # Bob is watching "Madagascar".
    ```
    
-   - `cinema_staff` - inside this module create `Cleaner` class,
+   - `cinema_staff.py` - inside this module create `Cleaner` class,
    its `__init__` method takes and stores `name`. 
    This class should have only one method `clean_hall`, this method
    takes `hall_number` - number of hall that cleaner have to clean and
@@ -68,12 +70,14 @@ customer, `hall_number` - number of the hall in cinema,
 `cleaner` - name of the cleaner, that will clean the
 hall after movie session.
 
-This function should make `Customers` instances, instance of `CinemaHall`
-and `CinemaBar`, instance of `Cleaner`. First, cinema bar should sell food to
-customers, then cinema hall should make a movie session and finally cleaner
-cleans cinema hall.
+This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
+First, the cinema bar should sell food to customers. To do this, you can use the `CinemaBar`
+class without creating an instance. Then, the cinema hall should schedule a movie session,
+and finally, a cleaner should clean the cinema hall.  We expect each class to work with the provided data,
+accepting parameters in the correct order and having the necessary methods.
+No additional checks or error handling are needed!
 
-Example: 
+Example (do not add it to `main.py`): 
 ```python
 customers = [
     {"name": "Bob", "food": "Coca-cola"},
@@ -82,7 +86,7 @@ customers = [
 hall_number = 5
 cleaner_name = "Anna"
 movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
+cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name, movie=movie)
 # Cinema bar sold Coca-cola to Bob.
 # Cinema bar sold popcorn to Alex.
 # "Madagascar" started in hall number 5.
@@ -91,3 +95,8 @@ cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagasc
 # "Madagascar" ended.
 # Cleaner Anna is cleaning hall number 5.
 ```
+
+**Important Note**: Each method responsible for performing a task should only print a message using
+the `print()` function. There is no need to return anything or use the `logging` module.
+
+Finally, check your code using this [checklist](checklist.md) before pushing your solution.
