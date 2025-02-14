@@ -5,7 +5,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
 
         cleaner: str,
@@ -14,9 +14,9 @@ def cinema_visit(
 
     customer_instances = [
         Customer(
-            cust["name"],
-            cust["food"]
-        ) for cust in customers
+            customer["name"],
+            customer["food"]
+        ) for customer in customers
     ]
 
     for customer in customer_instances:
