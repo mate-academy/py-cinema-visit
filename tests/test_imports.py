@@ -42,7 +42,7 @@ def test_cleaner_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.cinema_staff.py':
+            if isinstance(child, ImportFrom) and child.module == 'app.people.cinema_staff':
                 random_import = child
     assert (
             random_import is not None
