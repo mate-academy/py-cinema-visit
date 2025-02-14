@@ -1,4 +1,3 @@
-# filepath: /d:/Games/python/mate_acad/py-cinema-visit/app/main.py
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
@@ -12,20 +11,16 @@ def cinema_visit(
     movie: str
 ) -> None:
     for customer_data in customers:
-        customers=[
-            Customer(
-                name=c["name"],
-                food=c["food"]
-            ) 
-            for c in customers
-        ]
-
+        customer = Customer(
+            name=customer_data["name"],
+            food=customer_data["food"]
+        )
         CinemaBar.sell_product(product=customer.food, customer=customer)
 
-    hall = CinemaHall(number)
+    hall = CinemaHall(number=number)
     hall.movie_session(
         movie_name=movie,
-        customers=[Customer(name=c["name"],
-        food=c["food"]) for c in customers],
+        customers=[
+            Customer(name=c["name"], food=c["food"]) for c in customers],
         cleaning_staff=Cleaner(name=cleaner)
     )
