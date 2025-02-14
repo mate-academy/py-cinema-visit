@@ -42,14 +42,14 @@ def test_cleaner_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.cinema_staff':
+            if isinstance(child, ImportFrom) and child.module == 'app.people.cinema_staff.py':
                 random_import = child
     assert (
             random_import is not None
     ), "Class 'Cleaner' should be imported using 'from'"
     assert (
             random_import.names[0].name == "Cleaner"
-    ), "Class 'Cleaner' should be imported from 'cinema_staff' module"
+    ), "Class 'Cleaner' should be imported from 'cinema_staff.py' module"
 
 
 def test_customer_import():
