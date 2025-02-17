@@ -7,12 +7,10 @@ from app.cinema.bar import CinemaBar
 def cinema_visit(
     customers: list, hall_number: int, cleaner: str, movie: str
 ) -> None:
-    customer_instances = []
-    for customer in customers:
-        customer_instance = Customer(
-            name=customer["name"], food=customer["food"]
-        )
-        customer_instances.append(customer_instance)
+    customer_instances = [
+        Customer(name=customer["name"], food=customer["food"])
+        for customer in customers
+    ]
 
     for customer in customer_instances:
         CinemaBar.sell_product(customer=customer, product=customer.food)
