@@ -1,5 +1,5 @@
 class CinemaHall:
-    def __init__(self, number: int) -> None:  # Використовуємо number замість hall_number
+    def __init__(self, number: int) -> None:
         self.number = number
 
     def movie_session(self,
