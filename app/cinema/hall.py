@@ -9,7 +9,7 @@ class CinemaHall:
 
     def movie_session(
             self,
-            movie_name: Customer,
+            movie_name: str,
             customers: list,
             cleaning_staff: Cleaner
     ) -> None:
