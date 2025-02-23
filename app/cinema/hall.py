@@ -19,5 +19,4 @@ class CinemaHall:
 
         print(f"{movie_name} ended.")
 
-        # TODO: print "Cleaner {cleaning_staff.name} is cleaning hall number {self.number}"
-        # TODO: call cleaning_staff.clean_hall()
+        cleaning_staff.clean_hall(self.number)
