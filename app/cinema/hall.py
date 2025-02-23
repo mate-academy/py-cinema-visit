@@ -12,8 +12,7 @@ class CinemaHall:
             customers: list[Customer],
             cleaner: Cleaner
     ) -> None:
-        print(f'"{movie_name}" started in '
-              f'hall number {self.number}.')
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
