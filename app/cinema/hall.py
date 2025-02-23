@@ -14,8 +14,8 @@ class CinemaHall:
     ) -> None:
         print(f"\"{movie_name}\" started in hall number {self.number}")
 
-        # TODO: print "{customer.name} is watching {film_name}."
-        # TODO: call for each customer instance: customer.watch_movie
+        for customer in customers:
+            customer.watch_movie()
 
         print(f"{movie_name} ended.")
 
