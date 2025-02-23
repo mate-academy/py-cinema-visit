@@ -14,8 +14,8 @@ class CinemaHall:
             cleaning_staff: Cleaner,
             movie_name: str
     ) -> None:
-        print(f"{movie_name} starts in hall {hall_number}!")
+        print(f"\"{movie_name}\" started in hall number {hall_number}.")
         for customer in customers:
             customer.watch_movie(movie_name)
-        print(f"{movie_name} ended in hall {hall_number}!")
+        print(f"\"{movie_name}\" ended.")
         cleaning_staff.clean_hall(hall_number)
