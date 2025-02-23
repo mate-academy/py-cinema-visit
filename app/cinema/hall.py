@@ -12,7 +12,8 @@ class CinemaHall:
             customers: list,
             hall_number: int,
             cleaning_staff: Cleaner,
-            movie_name: str) -> None:
+            movie_name: str
+    ) -> None:
         print(f"{movie_name} starts in hall {hall_number}!")
         for customer in customers:
             customer.watch_movie(movie_name)
