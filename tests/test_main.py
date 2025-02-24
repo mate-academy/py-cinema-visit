@@ -1,17 +1,13 @@
-import pytest
 import io
-
+import pytest
 from contextlib import redirect_stdout
-
 from app.main import cinema_visit
 
 @pytest.mark.parametrize(
-    "customers,hall_number,cleaner,movie,output",
+    "customers, hall_number, cleaner, movie, output",
     [
         (
-            [
-                {"name": "Bob", "food": "popcorn"}
-            ],
+            [{"name": "Bob", "food": "popcorn"}],
             1,
             "Anna",
             "Tenet",
@@ -20,13 +16,10 @@ from app.main import cinema_visit
             'Bob is watching "Tenet".\n'
             '"Tenet" ended.\n'
             'Cleaner Anna is cleaning hall number 1.\n'
-
         ),
         (
-            [
-                {"name": "Bob", "food": "Coca-cola"},
-                {"name": "Alex", "food": "popcorn"}
-            ],
+            [{"name": "Bob", "food": "Coca-cola"},
+             {"name": "Alex", "food": "popcorn"}],
             5,
             "Anna",
             "Madagascar",
@@ -39,11 +32,9 @@ from app.main import cinema_visit
             'Cleaner Anna is cleaning hall number 5.\n'
         ),
         (
-            [
-                {"name": "Susan", "food": "Pepsi"},
-                {"name": "Michael", "food": "Coca-cola"},
-                {"name": "Monica", "food": "popcorn"}
-            ],
+            [{"name": "Susan", "food": "Pepsi"},
+             {"name": "Michael", "food": "Coca-cola"},
+             {"name": "Monica", "food": "popcorn"}],
             3,
             "Vasiliy",
             "Interstellar",
@@ -61,16 +52,6 @@ from app.main import cinema_visit
 )
 def test_cinema_visit(customers, hall_number, cleaner, movie, output):
     f = io.StringIO()
-
     with redirect_stdout(f):
         cinema_visit(customers, hall_number, cleaner, movie)
-
-    out = f.getvalue()
-
-    assert out == output, (
-        f"When 'customers' equals to {customers}, "
-        f"'hall_number' equals to {hall_number}. "
-        f"'cleaner' equals to {cleaner}, "
-        f"and 'movie' equals to {movie}, "
-        f"'cinema_visit' output should equal to {output}"
-    )
+    assert f.getvalue() == output
