@@ -7,6 +7,7 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(
         customers: list, hall_number: int, cleaner: str, movie: str) -> None:
     number = CinemaHall(hall_number)
+    isinstance(cleaner, Cleaner)
     cl_name = Cleaner(cleaner)
     customers_res = []
     for customer_dict in customers:
