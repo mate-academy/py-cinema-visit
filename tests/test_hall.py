@@ -2,9 +2,9 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.cinema.hall import CinemaHall
-from app.people.cinema_staff import Cleaner
-from app.people.customer import Customer
+from app import CinemaHall
+from app import Cleaner
+from app import Customer
 
 
 def test_cinema_hall_constructor():
