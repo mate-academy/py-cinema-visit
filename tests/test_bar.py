@@ -3,8 +3,8 @@ import io
 
 from contextlib import redirect_stdout
 
-from app import CinemaBar
-from app import Customer
+from app.cinema.bar import CinemaBar
+from app.people.customer import Customer
 
 
 def test_cinema_bar_sell_product():
