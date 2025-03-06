@@ -1,10 +1,9 @@
-class Customer:
-    def __init__(self, name: str, food: str) -> None:
-        self.name = name
-        self.food = food
+from __future__ import annotations
+from typing import Any
+from app.people.customer import Customer
 
 
 class CinemaBar:
     @staticmethod
-    def sell_product(customer: Customer, product: str) -> str:
+    def sell_product(customer: Customer, product: str) -> Any:
         print(f"Cinema bar sold {product} to {customer.name}.")
