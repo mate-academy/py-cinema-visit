@@ -1,4 +1,5 @@
-from app.cinema.bar import Customer
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -13,15 +14,6 @@ class CinemaHall:
                       ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
-            customer.watch_movie()
+            customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
-
-
-class Cleaner:
-
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-    def clean_hall(self, number_hall: object) -> None:
-        print(f"Cleaner {self.name} is cleaning hall {number_hall}.")

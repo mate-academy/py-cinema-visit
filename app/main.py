@@ -21,4 +21,3 @@ def cinema_visit(customers: List[Dict[str, str]],
 
     cinema_hall.movie_session(movie_name=movie, customers=customer_objects,
                               cleaning_staff=cleaning_staff)
-
