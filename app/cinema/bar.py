@@ -16,8 +16,3 @@ class Customer:
 
     def watch_movie(self) -> None:
         print(f"Customer {self.name} is watching a movie")
-
-
-cb = CinemaBar()
-customer = Customer("Bob", "popcorn")
-cb.sell_product(customer=customer, product=customer.food)

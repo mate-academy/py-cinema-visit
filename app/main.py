@@ -22,16 +22,3 @@ def cinema_visit(customers: List[Dict[str, str]],
     cinema_hall.movie_session(movie_name=movie, customers=customer_objects,
                               cleaning_staff=cleaning_staff)
 
-
-if __name__ == "__main__":
-    customers = [
-        {"name": "Bob", "food": "Coca-cola"},
-        {"name": "Alex", "food": "popcorn"}
-    ]
-    hall_number = 5
-    cleaner_name = "Anna"
-    movie = "Madagascar"
-    cinema_visit(customers=customers,
-                 hall_number=hall_number,
-                 cleaner=cleaner_name,
-                 movie=movie)
