@@ -8,24 +8,19 @@ from typing import List, Dict
 def cinema_visit(customers: List[Dict[str, str]],
                  hall_number: int,
                  cleaner: str,
-                 movie: str) -> None:
-    customer_objects = [
-        Customer(name=customer["name"], food=customer["food"])
-        for customer in customers]
+                 movie: str) -> None :
+    customer_objects = [Customer(name=c["name"], food=c["food"])
+                        for c in customers]
 
     for customer in customer_objects:
-        CinemaBar.sell_product(customer=customer, product=customer.food)
-    hall = CinemaHall(number=hall_number)
+        CinemaBar.sell_product(product=customer.food, customer=customer)
+
+    cinema_hall = CinemaHall(hall_number)
+
     cleaning_staff = Cleaner(name=cleaner)
-    print(f"'{movie}' started in hall number {hall.number}.")
-    for customer in customer_objects:
-        print(f"{customer.name} is watching '{movie}'.")
 
-    print(f"'{movie}' ended.")
-    print(
-        f"Cleaner {cleaning_staff.name} "
-        f"is cleaning hall number {hall.number}."
-    )
+    cinema_hall.movie_session(movie_name=movie, customers=customer_objects,
+                              cleaning_staff=cleaning_staff)
 
 
 if __name__ == "__main__":
