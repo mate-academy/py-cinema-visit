@@ -17,14 +17,14 @@ def cinema_visit(customers: List[Dict[str, str]],
         CinemaBar.sell_product(customer=customer, product=customer.food)
     hall = CinemaHall(number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
-    print(f'"{movie}" started in hall number {hall.number}.')
+    print(f"\"{movie}\" started in hall number {hall.number}.")
     for customer in customer_objects:
-        print(f'{customer.name} is watching "{movie}".')
+        print(f"{customer.name} is watching \"{movie}\".")
 
-    print(f'"{movie}" ended.')
+    print(f"\"{movie}\" ended.")
     print(
-        f'Cleaner {cleaning_staff.name} '
-        f'is cleaning hall number {hall.number}.'
+        f"Cleaner {cleaning_staff.name} "
+        f"is cleaning hall number {hall.number}."
     )
 
 
