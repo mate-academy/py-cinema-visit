@@ -9,15 +9,13 @@ def cinema_visit(
         hall_number: int,
         cleaner: str,
         movie: str
-):
-    list_of_customers = [Customer(name=cust["name"], food=cust["food"]) for cust in customers]
+) -> None:
+    list_of_customers = [Customer(name=cust["name"],
+                                  food=cust["food"])
+                         for cust in customers]
     hall_num = CinemaHall(hall_number)
     staff = Cleaner(cleaner)
     for visitor_1 in list_of_customers:
-        bar = CinemaBar()
-        bar.sell_product(visitor_1.food, visitor_1)
-    print(f"\"{movie}\" started in hall number {hall_number}.")
-    for visitor_2 in list_of_customers:
-        print(f"{visitor_2.name} is watching \"{movie}\".")
-    print(f"\"{movie}\" ended.")
-    staff.clean_hall(hall_number)
+        cinema_bar = CinemaBar()
+        cinema_bar.sell_product(visitor_1.food, visitor_1)
+    CinemaHall.movie_session(hall_num, movie, list_of_customers, staff)
