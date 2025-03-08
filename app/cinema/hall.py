@@ -2,8 +2,8 @@ class Cleaner:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def clean_hall(self):
-        print("The hall is being cleaned.")
+    def clean_hall(self, hall_number: int) -> None:
+        print(f"The hall {hall_number} is being cleaned by {self.name}.")
 
 
 class Customer:
@@ -11,32 +11,39 @@ class Customer:
         self.name = name
         self.food = food
 
-    def watch_movie(self, movie_name: str):
-        print(f"{self.name} is watching {movie_name} with {self.food}.")
+    def watch_movie(self, movie_name: str) -> None:
+        print(f'{self.name} is watching "{movie_name}".')
 
 
 class CinemaHall:
-    def __init__(self, number: int) -> None:
+    def __init__(self,
+                 number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str, customers: list, cleaning_staff: Cleaner) -> None:
-        
-        print(f"Movie session '{movie_name}' is starting in hall {self.number}.")
-
+    def movie_session(self, movie_name: str,
+                      customers: list,
+                      cleaning_staff: Cleaner) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
+        print(f'"{movie_name}" ended.')
 
-        print(f"Movie session '{movie_name}' ended in hall {self.number}.")
-        cleaning_staff.clean_hall()
+        cleaning_staff.clean_hall(hall_number=self.number)
+
 
 hall = CinemaHall(number=5)
 movie_name = "Madagascar"
+
 customers = [
-    Customer(name="Bob", food="Coca-cola"),
-    Customer(name="Alex", food="popcorn")
+    Customer(name="Bob",
+             food="Coca-cola"),
+    Customer(name="Alex",
+             food="popcorn")
 ]
 cleaning_staff = Cleaner(name="Anna")
 
-hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cleaning_staff)
+hall.movie_session(movie_name=movie_name,
+                   customers=customers,
+                   cleaning_staff=cleaning_staff)
