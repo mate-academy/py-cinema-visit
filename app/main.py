@@ -13,7 +13,7 @@ def cinema_visit(customers: list, number: int, cleaner: str, movie: str) -> None
         print("No valid customers found!")
         return
     for cust in customer_objects:
-        CinemaBar.sell_product(customer=cust)
+        CinemaBar.sell_product(customer=cust, product=cust.food)
     hall = CinemaHall(number)
     cleaner_object = Cleaner(cleaner)
     hall.movie_session(movie_name=movie, customers=customer_objects, cleaning_staff=cleaner_object)
