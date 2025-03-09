@@ -12,8 +12,8 @@ def cinema_visit(
 ) -> None:
     customer_objects = [
         Customer(name=c["name"], food=c["food"])
-        for c in customers
-        if "name" in c and "food" in c
+        for customer_var in customers
+        if "name" in customer_var and "food" in customer_var
     ]
     if not customer_objects:
         print("No valid customers found!")
