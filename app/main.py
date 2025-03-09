@@ -11,7 +11,7 @@ def cinema_visit(
         movie: str
 ) -> None:
     customer_objects = [
-        Customer(name=c["name"], food=c["food"])
+        Customer(name=customer_var["name"], food=customer_var["food"])
         for customer_var in customers
         if "name" in customer_var and "food" in customer_var
     ]
