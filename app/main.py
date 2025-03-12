@@ -18,8 +18,8 @@ def cinema_visit(
     if not customer_objects:
         print("No valid customers found!")
         return
-    for cust in customer_objects:
-        CinemaBar.sell_product(customer=cust, product=cust.food)
+    for customer in customer_objects:
+        CinemaBar.sell_product(customer=customer, product=customer.food)
     hall = CinemaHall(hall_number)
     cleaner_object = Cleaner(cleaner)
     hall.movie_session(
