@@ -10,13 +10,13 @@ def test_cinema_bar_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.cinema.bar':
+            if isinstance(child, ImportFrom) and child.module == "app.cinema.bar":
                 random_import = child
     assert (
-            random_import is not None
+        random_import is not None
     ), "Class 'CinemaBar' should be imported using 'from'"
     assert (
-            random_import.names[0].name == "CinemaBar"
+        random_import.names[0].name == "CinemaBar"
     ), "Class 'CinemaBar' should be imported from 'cinema_bar' module"
 
 
@@ -26,13 +26,13 @@ def test_cinema_hall_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.cinema.hall':
+            if isinstance(child, ImportFrom) and child.module == "app.cinema.hall":
                 random_import = child
     assert (
-            random_import is not None
+        random_import is not None
     ), "Class 'CinemaHall' should be imported using 'from'"
     assert (
-            random_import.names[0].name == "CinemaHall"
+        random_import.names[0].name == "CinemaHall"
     ), "Class 'CinemaHall' should be imported from 'cinema_hall' module"
 
 
@@ -42,13 +42,14 @@ def test_cleaner_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.cinema_staff':
+            if (
+                isinstance(child, ImportFrom)
+                and child.module == "app.people.cinema_staff"
+            ):
                 random_import = child
+    assert random_import is not None, "Class 'Cleaner' should be imported using 'from'"
     assert (
-            random_import is not None
-    ), "Class 'Cleaner' should be imported using 'from'"
-    assert (
-            random_import.names[0].name == "Cleaner"
+        random_import.names[0].name == "Cleaner"
     ), "Class 'Cleaner' should be imported from 'cinema_staff' module"
 
 
@@ -58,11 +59,9 @@ def test_customer_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.customer':
+            if isinstance(child, ImportFrom) and child.module == "app.people.customer":
                 random_import = child
+    assert random_import is not None, "Class 'Customer' should be imported using 'from'"
     assert (
-            random_import is not None
-    ), "Class 'Customer' should be imported using 'from'"
-    assert (
-            random_import.names[0].name == "Customer"
+        random_import.names[0].name == "Customer"
     ), "Class 'Customer' should be imported from 'customer' module"
