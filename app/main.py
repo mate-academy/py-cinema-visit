@@ -10,9 +10,9 @@ def cinema_visit(customers, hall_number, cleaner, movie):
     cleaner_instance = Cleaner(name=cleaner)
     hall_instance = CinemaHall(hall_number=hall_number)
 
-    # Sell products to customers
+    # Sell products to customers using keyword arguments
     for customer in customer_instances:
-        CinemaBar.sell_product(customer.food, customer)
+        CinemaBar.sell_product(product=customer.food, customer=customer)
 
     # Schedule the movie session
     hall_instance.movie_session(movie_name=movie, customers=customer_instances, cleaning_staff=cleaner_instance)
