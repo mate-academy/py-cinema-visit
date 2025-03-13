@@ -7,7 +7,7 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(customers, hall_number, cleaner, movie):
     # Create instances of Customer, CinemaHall, and Cleaner
     customer_instances = [Customer(name=customer["name"],
-                                   food=customer["food"]) for customer in customers]
+    food=customer["food"]) for customer in customers]
     cleaner_instance = Cleaner(name=cleaner)
     hall_instance = CinemaHall(hall_number=hall_number)
 
