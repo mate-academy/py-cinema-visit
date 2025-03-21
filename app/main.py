@@ -3,7 +3,9 @@ from cinema.hall import CinemaHall
 from people.cinema_staff import Cleaner
 from people.customer import Customer
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+
+def cinema_visit(customers: list,
+                 hall_number: int, cleaner: str, movie: str):
     for customer in customers:
         cinembar = CinemaBar(product=customer.food, customer=customer.name)
         print(cinembar.sell_product())
@@ -12,7 +14,11 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
 
     cleaning_staff = Cleaner(name=cleaner)
 
-    hall.movie_session(movie_name=movie, customers=customers, cleaning_staff=cleaning_staff)
+    hall.movie_session(
+        movie_name=movie,
+        customers=customers,
+        cleaning_staff=cleaning_staff
+    )
 
 
 customers = [
