@@ -6,7 +6,9 @@ class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str, customer: list[Customer], cleaning_staff: Cleaner):
+    def movie_session(self, movie_name: str,
+                      customer: list[Customer],
+                      cleaning_staff: Cleaner) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customers in customer:
             customers.watch_movie(movie_name)
