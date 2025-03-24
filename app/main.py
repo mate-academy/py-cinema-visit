@@ -11,7 +11,7 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    current_customers = [
+    current_customers: list[Customer] = [
         Customer(
             name=customer["name"],
             food=customer["food"]
