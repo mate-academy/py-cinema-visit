@@ -5,8 +5,9 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def create_customer_instances(customers_data: List[Dict[str, str]])\
-        -> List[Customer]:
+def create_customer_instances(
+        customers_data: list[dict[str, str]]
+) -> list[Customer]:
     return [Customer(name=data["name"],
                      food=data["food"]) for data in customers_data]
 
