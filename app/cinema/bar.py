@@ -1,12 +1,4 @@
 class CinemaBar:
-    def __init__(
-            self,
-            product: str = None,
-            customer: str = None
-            ) -> None:
-        self.product = product
-        self.customer = customer
-
     @staticmethod
-    def sell_product(self, product: str, customer: str) -> str:
-        return f"Cinema bar sold {self.product} to {self.customer}."
+    def sell_product(product: str, customer: str) -> str:
+        return f"Cinema bar sold {product} to {customer}."

@@ -2,12 +2,11 @@ from cinema.bar import CinemaBar
 from cinema.hall import CinemaHall
 from people.cinema_staff import Cleaner
 
-
 def cinema_visit(
-        customers: list,
-        hall_number: int,
-        cleaner: str,
-        movie: str
+    customers: list,
+    hall_number: int,
+    cleaner: str,
+    movie: str
 ):
     for customer in customers:
         print(
@@ -16,6 +15,7 @@ def cinema_visit(
                 customer=customer["name"]
             )
         )
+
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
@@ -25,11 +25,11 @@ def cinema_visit(
         cleaning_staff=cleaning_staff
     )
 
-
 customers = [
     {"name": "Bob", "food": "Coca-cola"},
     {"name": "Alex", "food": "popcorn"}
 ]
+
 cinema_visit(
     customers=customers,
     hall_number=5,
