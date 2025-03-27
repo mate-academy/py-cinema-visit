@@ -10,8 +10,12 @@ def cinema_visit(
         movie: str
 ):
     for customer in customers:
-        print(CinemaBar.sell_product(product=customer["food"], customer=customer["name"]))
-
+        print(
+            CinemaBar.sell_product(
+                product=customer["food"],
+                customer=customer["name"]
+            )
+        )
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
