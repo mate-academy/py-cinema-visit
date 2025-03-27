@@ -6,13 +6,10 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: list,
-            cleaning_staff:str) -> None:
+            cleaning_staff:str
+            ) -> None:
         print(f"Movie '{movie_name}' is starting in hall {self.hall_number}.")
-
-        # Всі клієнти дивляться фільм
         for customer in customers:
             customer.watch_movie(movie_name)
-
         print(f"Movie '{movie_name}' has ended")
-
         cleaning_staff.clean_hall(self.hall_number)

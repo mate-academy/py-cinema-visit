@@ -7,5 +7,6 @@ class CinemaBar:
         self.product = product
         self.customer = customer
 
-    def sell_product(self) -> str:
+    @staticmethod
+    def sell_product(self, product: str, customer: str) -> str:
         return f"Cinema bar sold {self.product} to {self.customer}."
