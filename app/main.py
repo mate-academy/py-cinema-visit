@@ -26,7 +26,6 @@ customers = [
     {"name": "Bob", "food": "Coca-cola"},
     {"name": "Alex", "food": "popcorn"}
 ]
-git commit -am "Solution"
 cinema_visit(
     customers=customers,
     hall_number=5,
