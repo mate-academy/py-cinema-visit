@@ -17,6 +17,7 @@ def cinema_visit(
             )
         )
 
+
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
