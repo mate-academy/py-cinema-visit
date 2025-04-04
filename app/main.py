@@ -17,7 +17,6 @@ def cinema_visit(
             )
         )
 
-
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
@@ -26,6 +25,7 @@ def cinema_visit(
         customers=customers,
         cleaning_staff=cleaning_staff
     )
+
 
 customers = [
     {"name": "Bob", "food": "Coca-cola"},
