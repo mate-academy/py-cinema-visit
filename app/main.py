@@ -1,6 +1,7 @@
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
 def cinema_visit(
@@ -9,11 +10,13 @@ def cinema_visit(
     cleaner: str,
     movie: str
 ) -> None:
-    for customer in customers:
+    customer_objects = [Customer(**customer) for customer in customers]
+
+    for customer in customer_objects:
         print(
             CinemaBar.sell_product(
-                product=customer["food"],
-                customer=customer["name"]
+                product=customer.food,
+                customer=customer.name
             )
         )
 
@@ -22,7 +25,7 @@ def cinema_visit(
 
     hall.movie_session(
         movie_name=movie,
-        customers=customers,
+        customers=customer_objects,
         cleaning_staff=cleaning_staff
     )
 
