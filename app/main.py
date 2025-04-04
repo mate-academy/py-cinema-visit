@@ -1,7 +1,6 @@
 from cinema.bar import CinemaBar
 from cinema.hall import CinemaHall
 from people.cinema_staff import Cleaner
-from people.customer import Customer
 
 
 def cinema_visit(
@@ -11,7 +10,12 @@ def cinema_visit(
     movie: str
 ) -> None:
     for customer in customers:
-        cinembar = CinemaBar(product=customer.food, customer=customer.name)
+        print(
+            CinemaBar.sell_product(
+                product=customer["food"],
+                customer=customer["name"]
+            )
+        )
 
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
