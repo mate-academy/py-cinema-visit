@@ -1,0 +1,7 @@
+class CinemaBar:
+    def __init__(self) -> None:
+        self.products = []
+
+    def sell_product(self, customer: str, product: str) -> None:
+        self.products.append(product)
+        print(f"Cinema bar sold {product} to {customer.name}.")
