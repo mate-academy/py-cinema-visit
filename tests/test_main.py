@@ -1,13 +1,17 @@
 import pytest
 import io
+
 from contextlib import redirect_stdout
-from app.main import cinema_visit  # Убедитесь, что этот импорт правильный
+
+from app.main import cinema_visit
 
 @pytest.mark.parametrize(
     "customers,hall_number,cleaner,movie,output",
     [
         (
-            [{"name": "Bob", "food": "popcorn"}],
+            [
+                {"name": "Bob", "food": "popcorn"}
+            ],
             1,
             "Anna",
             "Tenet",
@@ -16,9 +20,13 @@ from app.main import cinema_visit  # Убедитесь, что этот имп�
             'Bob is watching "Tenet".\n'
             '"Tenet" ended.\n'
             'Cleaner Anna is cleaning hall number 1.\n'
+
         ),
         (
-            [{"name": "Bob", "food": "Coca-cola"}, {"name": "Alex", "food": "popcorn"}],
+            [
+                {"name": "Bob", "food": "Coca-cola"},
+                {"name": "Alex", "food": "popcorn"}
+            ],
             5,
             "Anna",
             "Madagascar",
@@ -31,7 +39,11 @@ from app.main import cinema_visit  # Убедитесь, что этот имп�
             'Cleaner Anna is cleaning hall number 5.\n'
         ),
         (
-            [{"name": "Susan", "food": "Pepsi"}, {"name": "Michael", "food": "Coca-cola"}, {"name": "Monica", "food": "popcorn"}],
+            [
+                {"name": "Susan", "food": "Pepsi"},
+                {"name": "Michael", "food": "Coca-cola"},
+                {"name": "Monica", "food": "popcorn"}
+            ],
             3,
             "Vasiliy",
             "Interstellar",
@@ -55,16 +67,10 @@ def test_cinema_visit(customers, hall_number, cleaner, movie, output):
 
     out = f.getvalue()
 
-    # Сравниваем фактический и ожидаемый вывод, печатаем их, если они не совпадают
-    if out.strip() != output.strip():
-        print(f"\nExpected Output:\n{repr(output)}")
-        print(f"\nActual Output:\n{repr(out)}")
-
-    assert out.strip() == output.strip(), (
+    assert out == output, (
         f"When 'customers' equals to {customers}, "
         f"'hall_number' equals to {hall_number}. "
         f"'cleaner' equals to {cleaner}, "
         f"and 'movie' equals to {movie}, "
-        f"Expected output:\n{repr(output)}\n"
-        f"Actual output:\n{repr(out)}"
+        f"'cinema_visit' output should equal to {output}"
     )
