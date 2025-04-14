@@ -1,9 +1,10 @@
-import pytest
 import io
-
 from contextlib import redirect_stdout
 
+import pytest
+
 from app.main import cinema_visit
+
 
 @pytest.mark.parametrize(
     "customers,hall_number,cleaner,movie,output",
