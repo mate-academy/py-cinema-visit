@@ -5,7 +5,7 @@ from app import main
 
 
 def test_cinema_bar_import():
-    with open(main.__file__, "r") as source:
+    with open(main.__file__, "r", encoding="utf-8") as source:
         parsed_module = ast.parse(source.read())
         random_import = None
 
@@ -21,7 +21,7 @@ def test_cinema_bar_import():
 
 
 def test_cinema_hall_import():
-    with open(main.__file__, "r") as source:
+    with open(main.__file__, "r", encoding="utf-8") as source:
         parsed_module = ast.parse(source.read())
         random_import = None
 
@@ -37,7 +37,7 @@ def test_cinema_hall_import():
 
 
 def test_cleaner_import():
-    with open(main.__file__, "r") as source:
+    with open(main.__file__, "r", encoding="utf-8") as source:
         parsed_module = ast.parse(source.read())
         random_import = None
 
@@ -53,7 +53,7 @@ def test_cleaner_import():
 
 
 def test_customer_import():
-    with open(main.__file__, "r") as source:
+    with open(main.__file__, "r", encoding="utf-8") as source:
         parsed_module = ast.parse(source.read())
         random_import = None
 
