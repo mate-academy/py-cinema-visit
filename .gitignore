@@ -1,8 +1,14 @@
-.idea/
-.vscode/
-*.iml
-.env
-.DS_Store
-venv/
-.pytest_cache/
-**__pycache__/
+.idea/         # Ignore JetBrains IntelliJ IDEA IDE directory
+.vscode/       # Ignore Visual Studio Code IDE directory
+*.iml          # Ignore IntelliJ IDEA module file
+.env           # Ignore environment configuration file
+.DS_Store      # Ignore macOS Finder metadata file
+venv/          # Ignore virtual environment directory
+.pytest_cache/ # Ignore pytest cache directory
+**__pycache__/ # Ignore Python cache directories and files recursively
+.cache
+*.log
+*.tmp
+# Виключення директорій кешу
+/build/
+/dist/
