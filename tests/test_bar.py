@@ -1,9 +1,8 @@
-import pytest
 import io
 
 from contextlib import redirect_stdout
 
-from app.cinema.bar import CinemaBar
+from app.cinema1.bar import CinemaBar
 from app.people.customer import Customer
 
 
