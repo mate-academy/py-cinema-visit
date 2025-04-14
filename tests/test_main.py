@@ -5,6 +5,7 @@ from contextlib import redirect_stdout
 
 from app.main import cinema_visit
 
+
 @pytest.mark.parametrize(
     "customers,hall_number,cleaner,movie,output",
     [
