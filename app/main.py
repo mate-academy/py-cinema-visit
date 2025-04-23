@@ -4,12 +4,10 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+def cinema_visit(customers_data: list, hall_number: int, cleaner_name: str, movie: str) -> None:
+    customers = [Customer(name=data["name"], food=data["food"]) for data in customers_data]
     for customer in customers:
-        print(f"Cinema bar sold {customer['food']} to {customer['name']}.")
-
-    print(f"\"{movie}\" started in hall number {hall_number}.")
-    for customer in customers:
-        print(f"{customer['name']} is watching \"{movie}\".")
-    print(f"\"{movie}\" ended.")
-    print(f"Cleaner {cleaner} is cleaning hall number {hall_number}.")
+        CinemaBar.sell_product(product=customer.food, customer=customer)
+    cleaner = Cleaner(name=cleaner_name)
+    hall = CinemaHall(number=hall_number)
+    hall.movie_session(movie_name=movie, customers=customers, cleaning_staff=cleaner)
