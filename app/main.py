@@ -12,9 +12,9 @@ def cinema_visit(
 ) -> None:
     customer_objs = []
 
-    for c in customers:
-        customer_obj = Customer(name=c["name"], food=c["food"])
-        CinemaBar.sell_product(product=c["food"], customer=customer_obj)
+    for customer in customers:
+        customer_obj = Customer(name=customer["name"], food=customer["food"])
+        CinemaBar.sell_product(product=customer["food"], customer=customer_obj)
         customer_objs.append(customer_obj)
 
     cleaner_obj = Cleaner(name=cleaner)
