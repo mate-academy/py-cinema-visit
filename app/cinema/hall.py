@@ -1,10 +1,23 @@
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
+
+
 class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
 
     def movie_session(self, movie_name: str,
-                      customers: list,
-                      cleaning_staff: str) -> None:
+                      customers: list[Customer],
+                      cleaning_staff: Cleaner) -> None:
+        """
+              Run a movie session and clean the hall after.
+
+              Parameters:
+              - movie_name (str): Name of the movie.
+              - customers (list[Customer]): List of customers watching.
+              - cleaning_staff (Cleaner): An instance of the cleaner
+               responsible for cleaning after the session.
+              """
         print(f'\"{movie_name}\" started in hall number {self.number}.')
 
         for customer in customers:
