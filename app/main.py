@@ -17,6 +17,6 @@ def cinema_visit(customers: List[dict], hall_number: int,
     for customer in customer_list:
         cinema_bar.sell_product(product=customer.food, customer=customer)
 
-    cinema_hall.movie_session(movie_name=movie_name,
+    cinema_hall.watch_movie(movie_name=movie_name,
                               customers=customer_list,
                               cleaning_staff=cleaner)
