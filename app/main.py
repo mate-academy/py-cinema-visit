@@ -22,10 +22,9 @@ def cinema_visit(
         )
 
     hall = CinemaHall(number=hall_number)
-    instance_customer = instance_customer_
 
     hall.movie_session(
         movie,
-        instance_customer,
+        instance_customer_,
         cleaning_staff=Cleaner(cleaner)
     )
