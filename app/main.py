@@ -4,7 +4,9 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list,
+from typing import List
+
+def cinema_visit(customers: List[Customer],
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
