@@ -21,8 +21,8 @@ def cinema_visit(customers: list, hall_number: int,
         )
 
         hall = CinemaHall(number=hall_number)
-        cleaner_instance = Cleaner(name=cleaner)
-        hall.movie_session(
+    cleaner_instance = Cleaner(name=cleaner)
+    hall.movie_session(
             movie_name=movie,
             customers=customers_list,
             cleaning_staff=cleaner_instance
