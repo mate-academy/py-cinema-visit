@@ -6,6 +6,7 @@ from app.people.cinema_staff import Cleaner
 
 from typing import List
 
+
 def cinema_visit(customers: List[Customer],
                  hall_number: int,
                  cleaner: str,
