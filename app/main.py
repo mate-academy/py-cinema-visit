@@ -20,7 +20,7 @@ def cinema_visit(customers: list, hall_number: int,
             customer=customer
         )
 
-        hall = CinemaHall(number=hall_number)
+    hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
     hall.movie_session(
             movie_name=movie,
