@@ -4,7 +4,7 @@ from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str,
+def cinema_visit(customers: list, hall_number: int, cleaner: Cleaner,
                  movie: str) -> None:
     cinema_bar = CinemaBar()
     customers_instances = [Customer(name=customer["name"],
