@@ -15,4 +15,4 @@ class CinemaHall:
 
         print(f'"{movie_name}" ended.')
 
-        Cleaner.clean_hall(cleaning_staff, self.number)
+        cleaning_staff.clean_hall(self.number)
