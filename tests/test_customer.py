@@ -30,7 +30,7 @@ def test_customer_watch_movie():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        watch_movie(movie)
+        customer.watch_movie(movie)
 
     out = f.getvalue()
     output = 'Bob is watching "Matrix".\n'
