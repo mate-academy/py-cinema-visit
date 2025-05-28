@@ -1,5 +1,5 @@
-# from app.people.customer import Customer
-# from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -10,8 +10,9 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: list,
-            cleaning_staff: "Cleaner"
-    ) -> None:
-        for _ in customers:
-            _.watch_movie()
-        Cleaner.clean_hall(self.number)
+            cleaning_staff: "Cleaner"):
+        print(f"{movie_name} started in hall number {self.number}.")
+        for cust in customers:
+            cust.watch_movie(movie_name)
+        print(f"{movie_name} ended.")
+        cleaning_staff.clean_hall(self.number)
