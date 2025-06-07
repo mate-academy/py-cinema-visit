@@ -23,7 +23,6 @@ package create modules:
    cb.sell_product(customer=customer, product=customer.food)
    # Cinema bar sold popcorn to Bob.
    ```
-
    - `hall.py` - inside this module create `CinemaHall`
    class that describes actions during the movie session. Its
    `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
@@ -46,7 +45,6 @@ cleaning_staff = Cleaner(name="Anna")
 
 hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cleaning_staff)
 ```
-
 2. In directory `app` create package `people`. In this package
    create modules:
    - `customer.py` - inside this module create `Customer` class,
@@ -60,8 +58,7 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
    bob.watch_movie(movie="Madagascar")
    # Bob is watching "Madagascar".
    ```
-   
-   - `cinema_staff.py` - inside this module create `Cleaner` class,
+# (   - `cinema_staff.py` - inside this module create `Cleaner` class,
    its `__init__` method takes and stores `name`. 
    This class should have only one method `clean_hall`, this method
    takes `hall_number` - number of hall that cleaner have to clean and
@@ -72,7 +69,6 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
    anna.clean_hall(hall_number=5)
    # Cleaner Anna is cleaning hall number 5.
    ```
-
 In the module `main.py` you have to import all this classes. Classes
 should be imported by absolute path, that starts with 'app.' with 
 keyword 'from'. Write a
@@ -81,7 +77,6 @@ of customers, elements are dicts with 'name' and desired 'food' of a
 customer, `hall_number` - number of the hall in cinema, 
 `cleaner` - name of the cleaner, that will clean the
 hall after movie session.
-
 This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
 First, the cinema bar should sell food to customers. To do this, you can use the `CinemaBar`
 class without creating an instance. Then, the cinema hall should schedule a movie session,
