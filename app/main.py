@@ -29,10 +29,10 @@ def cinema_visit(movie: str, customers: list[dict],
     cleaner = Cleaner(cleaner)
     customer_objects = []
     for customer in customers:
-        customer = Customer(name = customer["name"], food = customer["food"])
+        customer = Customer(name=customer["name"], food=customer["food"])
         customer_objects.append(customer)
 
     for customer in customer_objects:
-        CinemaBar.sell_product(product = customer.food, customer = customer)
+        CinemaBar.sell_product(product=customer.food, customer=customer)
 
     hall.movie_session(movie, customer_objects, cleaner)
