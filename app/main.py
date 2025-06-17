@@ -10,12 +10,16 @@ def cinema_visit(
     hall_number: int,
     cleaner: str
 ):
+    # Criar instâncias Customer
     customer_objs = [Customer(name=c["name"], food=c["food"]) for c in customers]
 
+    # Vender comida no bar (sem instanciar CinemaBar)
     for cust in customer_objs:
         CinemaBar.sell_product(product=cust.food, customer=cust)
 
+    # Criar a sala e o limpador
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
+    # Agendar sessão de cinema
     hall.movie_session(movie_name=movie, customers=customer_objs, cleaning_staff=cleaning_staff)
