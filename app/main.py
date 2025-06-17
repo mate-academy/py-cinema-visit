@@ -13,11 +13,10 @@ def cinema_visit(customers: list[dict[str, str]],
     customer_list: list["Customer"] = []
 
     for customer in customers:
-        cb = CinemaBar()
 
         custom_object = Customer(customer["name"], customer["food"])
 
-        cb.sell_product(custom_object, custom_object.food)
+        CinemaBar.sell_product(custom_object, custom_object.food)
 
         customer_list.append(custom_object)
 
