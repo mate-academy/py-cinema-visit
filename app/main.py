@@ -16,5 +16,3 @@ def cinema_visit(customers: list, hall_number: int,
         CinemaBar.sell_product(customer, customer.food)
     hall.movie_session(movie, customer_instances, cleaner_instance)
     cleaner_instance.clean_hall(hall_number)
-
-    pass
