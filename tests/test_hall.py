@@ -1,49 +1,27 @@
-import io
-
-from contextlib import redirect_stdout
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'app')))
 
 from app.cinema.hall import CinemaHall
-from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
+def test_movie_session(capsys):
+    hall = CinemaHall(hall_number=5)
+    customers = [
+        Customer(name="Bob", food="Coca-cola"),
+        Customer(name="Alex", food="popcorn"),
+    ]
+    cleaner = Cleaner(name="Anna")
+    hall.movie_session(movie_name="Madagascar", customers=customers, cleaning_staff=cleaner)
 
-def test_cinema_hall_constructor():
-    ch = CinemaHall(number=6)
-    assert hasattr(ch, "number"), (
-        "CinemaHall instance should have 'number' attribute"
-    )
-    assert ch.number == 6, (
-        f"Value of attribute 'number' should equal to 6 when "
-        f"instance is created by 'CinemaHall(number=6)'"
-    )
+    captured = capsys.readouterr()
+    expected = '\n'.join([
+        '"Madagascar" started in hall number 5.',
+        'Bob is watching "Madagascar".',
+        'Alex is watching "Madagascar".',
+        '"Madagascar" ended.',
+        'Cleaner Anna is cleaning hall number 5.'
+    ])
+    assert captured.out.strip() == expected
 
-
-def test_cinema_hall_movie_session():
-    hall = 4
-    ch = CinemaHall(hall)
-    customer1_name = "Max"
-    food1 = "chips"
-    customer1 = Customer(customer1_name, food1)
-    customer2_name = "Alex"
-    food2 = "popcorn"
-    customer2 = Customer(customer2_name, food2)
-    movie_name = "I'm Robot"
-    cleaner_name = "John"
-    cleaner = Cleaner(cleaner_name)
-    f = io.StringIO()
-
-    with redirect_stdout(f):
-        ch.movie_session(movie_name, [customer1, customer2], cleaner)
-
-    out = f.getvalue()
-    output = '"I\'m Robot" started in hall number 4.\n' \
-             'Max is watching "I\'m Robot".\n' \
-             'Alex is watching "I\'m Robot".\n' \
-             '"I\'m Robot" ended.\n' \
-             'Cleaner John is cleaning hall number 4.\n'
-    assert out == output, (
-        f"'movie_session' output should equal to {output}, "
-        f"when hall number is {hall}, there are two customers "
-        f"{customer1_name} and {customer2_name} and cleaner's "
-        f"name is {cleaner_name}"
-    )

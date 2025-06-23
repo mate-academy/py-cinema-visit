@@ -1,25 +1,17 @@
-from typing import List, Dict
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
-def cinema_visit(
-    movie: str,
-    customers: List[Dict[str, str]],
-    hall_number: int,
-    cleaner: str
-):
-    # Criar instâncias Customer
+def cinema_visit(customers, hall_number, cleaner, movie):
     customer_objs = [Customer(name=c["name"], food=c["food"]) for c in customers]
 
-    # Vender comida no bar (sem instanciar CinemaBar)
-    for cust in customer_objs:
-        CinemaBar.sell_product(product=cust.food, customer=cust)
+    for c in customer_objs:
+        CinemaBar.sell_product(product=c.food, customer=c)
 
-    # Criar a sala e o limpador
     hall = CinemaHall(hall_number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
-    # Agendar sessão de cinema
     hall.movie_session(movie_name=movie, customers=customer_objs, cleaning_staff=cleaning_staff)
+
+
