@@ -5,12 +5,12 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-    customers: list,
+    customers: list[dict],
     hall_number: int,
     cleaner: str,
     movie: str
 ) -> None:
-    customers = [
+    customer_objects = [
         Customer(
             customer.get("name", ""),
             customer.get("food", "")
@@ -18,9 +18,9 @@ def cinema_visit(
         for customer in customers
     ]
     cinema_hall = CinemaHall(hall_number)
-    cleaner = Cleaner(cleaner)
+    cleaning_staff = Cleaner(cleaner)
 
-    for customer in customers:
+    for customer in customer_objects:
         CinemaBar.sell_product(customer.food, customer)
 
-    cinema_hall.movie_session(movie, customers, cleaner)
+    cinema_hall.movie_session(movie, customer_objects, cleaning_staff)
