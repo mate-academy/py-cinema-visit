@@ -12,15 +12,15 @@ def cinema_visit(
 ) -> None:
 
     customer_objects = [
-        Customer(name=c["name"], food=c["food"])
-        for c in customers
+        Customer(n["name"], n["food"])
+        for n in customers
     ]
     for customer in customer_objects:
-        CinemaBar.sell_product(product=customer.food, customer=customer)
-    hall = CinemaHall(number=hall_number)
-    cleaning_staff = Cleaner(name=cleaner)
+        CinemaBar.sell_product(customer.food, customer)
+    hall = CinemaHall(hall_number)
+    cleaning_staff = Cleaner(cleaner)
     hall.movie_session(
-        movie_name=movie,
-        customers=customer_objects,
-        cleaning_staff=cleaning_staff
+        movie,
+        customer_objects,
+        cleaning_staff
     )
