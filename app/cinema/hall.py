@@ -1,8 +1,8 @@
-from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
+
 class CinemaHall():
-    def __init__(self, number):
+    def __init__(self, number: int) -> None:
         self.number = number
 
     def movie_session(
@@ -18,4 +18,4 @@ class CinemaHall():
 
         print(f"\"{movie_name}\" ended.")
 
-        cleaning_staff.clean_hall(number=self.number)
+        cleaning_staff.clean_hall(hall_number=self.number)

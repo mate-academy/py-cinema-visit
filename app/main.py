@@ -12,7 +12,8 @@ def cinema_visit(
 ) -> None:
     customer_instances = []
     for customer_data in customers:
-        customer_instance = Customer(name=customer_data["name"], food=customer_data["food"])
+        customer_instance = Customer(
+            name=customer_data["name"], food=customer_data["food"])
         customer_instances.append(customer_instance)
 
     cleaner_instance = Cleaner(name=cleaner)
@@ -20,7 +21,8 @@ def cinema_visit(
     cinema_hall_instance = CinemaHall(number=number)
 
     for customer_inst in customer_instances:
-        CinemaBar.sell_product(product=customer_inst.food, customer=customer_inst)
+        CinemaBar.sell_product(
+            product=customer_inst.food, customer=customer_inst)
 
     cinema_hall_instance.movie_session(
         movie_name=movie,
