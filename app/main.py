@@ -1,22 +1,25 @@
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
-    """
-    Simulates a cinema visit scenario and prints the sequence of events.
+    """Simulate cinema visit scenario with food sales, movie watching and cleaning.
 
     Args:
-        customers: List of dictionaries with keys 'name' and 'food'
-        hall_number: Number of the cinema hall
-        cleaner: Name of the cleaning staff
-        movie: Title of the movie being shown
+        customers: List of dicts with 'name' and 'food' keys
+        hall_number: Number of cinema hall
+        cleaner: Name of cleaner
+        movie: Movie title
     """
+    # Process food sales
     for customer in customers:
         print(f"Cinema bar sold {customer['food']} to {customer['name']}.")
 
-    print(f'"{movie}" started in hall number {hall_number}.')
+    # Movie starts
+    print(f"\"{movie}\" started in hall number {hall_number}.")
 
+    # Customers watching
     for customer in customers:
-        print(f'{customer["name"]} is watching "{movie}".')
+        print(f"{customer['name']} is watching \"{movie}\".")
 
-    print(f'"{movie}" ended.')
+    # Movie ends
+    print(f"\"{movie}\" ended.")
 
-    print(f'Cleaner {cleaner} is cleaning hall number {hall_number}.')
-
+    # Cleaning
+    print(f"Cleaner {cleaner} is cleaning hall number {hall_number}.")
