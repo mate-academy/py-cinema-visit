@@ -1,6 +1,2 @@
-[flake8]
-ignore = E203, E266
-max-line-length = 79
-max-complexity = 18
-select = B,C,E,F,W,T4,B9
-exclude = venv, tests
+mkdir -p app/cinema app/people
+touch app/cinema/__init__.py app/people/__init__.py

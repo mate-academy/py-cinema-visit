@@ -1,31 +1,15 @@
-name: Test
+class Bar:
+    def __init__(self):
+        self.menu = {"popcorn": 5, "soda": 3}
 
-on:
-  pull_request:
-    branches:
-      - "master"
+    def sell(self, item_name: str, customer) -> bool:
+        price = self.menu.get(item_name)
+        if price is None:
+            raise ValueError(f"No such item: {item_name}")
+        if customer.money >= price:
+            customer.money -= price
+            customer.snacks.append(item_name)
+            return True
+        return False
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Set Up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-
-      - name: Install pytest and flake8
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run flake8
-        run: flake8 app/
-      - name: Run tests
-        timeout-minutes: 5
-        run: pytest tests/
 
