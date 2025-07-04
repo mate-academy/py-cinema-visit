@@ -9,14 +9,16 @@ class CinemaHall:
     def movie_session(self, movie_name: str,
                       customers: list | object,
                       cleaning_staff: Cleaner) -> None:
-        name = Cleaner(cleaning_staff.name)
         print(f'"{movie_name}" started in hall number {self.number}.')
         for person in customers:
             if isinstance(person, Customer):
-                human = Customer(person.name, person.food)
-            else:
+                human = person
+            elif (isinstance(person, dict) and "name" in person
+                  and "food" in person):
                 human = Customer(person["name"], person["food"])
+            else:
+                raise ValueError(f"Invalid customer data: {person}")
             human.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
 
-        return name.clean_hall(self.number)
+        return cleaning_staff.clean_hall(self.number)
