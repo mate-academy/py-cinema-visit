@@ -11,8 +11,7 @@ def cinema_visit(
     for customer in customers:
         new_customer = Customer(customer["name"], customer["food"])
         custom_list.append(new_customer)
-        cin_bar = CinemaBar
-        cin_bar.sell_product(new_customer, new_customer.food)
+        CinemaBar.sell_product(new_customer, new_customer.food)
 
     clear = Cleaner(cleaner)
     hall = CinemaHall(hall_number)
