@@ -4,6 +4,7 @@ from app.people.cinema_staff import Cleaner
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
+
 def cinema_visit(
     movie: str,
     customers: List[Dict[str, str]],
