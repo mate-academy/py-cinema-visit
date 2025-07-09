@@ -6,10 +6,10 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-    movie: str,
     customers: List[Dict[str, str]],
     hall_number: int,
-    cleaner: str
+    cleaner: str,
+    movie: str
 ) -> None:
     customer_objs: List[Customer] = [
         Customer(name=c["name"], food=c["food"]) for c in customers
