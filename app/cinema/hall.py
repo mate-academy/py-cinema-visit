@@ -4,7 +4,7 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, hall_number=None, number=None) -> None:
+    def __init__(self, hall_number: int = None, number: int = None) -> None:
         self.number = hall_number if hall_number is not None else number
         self.hall_number = self.number
 
