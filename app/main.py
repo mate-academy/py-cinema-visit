@@ -1,26 +1,28 @@
-from app.people.cinema_staff import Cleaner
-from app.people.customer import Customer
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list,
-                 hall_number: int,
-                 cleaner: str,
-                 movie: str,
-                 ) -> None:
-    customers_ = []
-    for customer_ in customers:
-        customer = Customer(
-            name=customer_["name"],
-            food=customer_["food"],
+def cinema_visit(
+        movie: str,
+        customers: list[dict[str, str]],
+        hall_number: int,
+        cleaner: str
+) -> None:
+    customers_obj = [
+        Customer(name=c["name"], food=c["food"]) for c in customers
+    ]
+    cinema_hall_obj = CinemaHall(number=hall_number)
+    cleaner_obj = Cleaner(name=cleaner)
+
+    for customer_obj in customers_obj:
+        CinemaBar.sell_product(
+            customer=customer_obj,
+            product=customer_obj.food
         )
-        customers_.append(customer)
-        CinemaBar.sell_product(customer=customer, product=customer.food)
-    cinema_hall = CinemaHall(hall_number)
-    CinemaHall.movie_session(
-        cinema_hall,
-        movie,
-        customers_,
-        Cleaner(name=cleaner)
+    cinema_hall_obj.movie_session(
+        movie_name=movie,
+        customers=customers_obj,
+        cleaning_staff=cleaner_obj
     )
