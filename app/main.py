@@ -6,7 +6,7 @@ from app.people.cinema_staff import Cleaner
 
 def cinema_visit(
         movie: str,
-        customers: list[dict[str, str]],
+        customers: list,
         hall_number: int,
         cleaner: str
 ) -> None:
