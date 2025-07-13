@@ -4,9 +4,9 @@ from app.people.cinema_staff import Cleaner
 class CinemaHall:
     def __init__(self, hall_number: int = None, *, number: int = None) -> None:
         self.hall_number = hall_number if hall_number is not None else number
-        self.number = self.hall_number  # Add this line to satisfy the test
         if self.hall_number is None:
             raise ValueError("Must provide either hall_number or number")
+        self.number = self.hall_number
 
     def movie_session(
             self,
