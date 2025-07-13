@@ -6,6 +6,7 @@ from app.cinema.hall import CinemaHall
 
 def cinema_visit(customers: list, number: int, cleaner: str, movie: str) -> None:
     customer_objects = []
+
     for customer_data in customers:
         name = customer_data["name"]
         food = customer_data["food"]
