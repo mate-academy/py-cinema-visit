@@ -12,9 +12,9 @@ def test_cinema_hall_constructor():
     assert hasattr(ch, "hall_number"), (
         "CinemaHall instance should have 'hall_number' attribute"
     )
-    assert ch.number == 6, (
-        f"Value of attribute 'number' should equal to 6 when "
-        f"instance is created by 'CinemaHall(number=6)'"
+    assert ch.hall_number == 6, (
+        f"Value of attribute 'hall_number' should equal to 6 when "
+        f"instance is created by 'CinemaHall(hall_number=6)'"
     )
 
 
