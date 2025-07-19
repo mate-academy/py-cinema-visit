@@ -1,3 +1,4 @@
+# write your imports here
 from typing import List, Dict
 
 
@@ -18,7 +19,7 @@ def cinema_visit(
     print("-------------------")
     print(f"Hall Number: {hall_number}")
     print(f"Movie: {movie}")
-    print(f"Customers: {\", \".join(customers)}")
+    print(f'Customers: {", ".join(customers)}')
     print(f"Cleaner: {cleaner}")
 
     return visit_info
