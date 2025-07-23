@@ -14,7 +14,8 @@ def cinema_visit(customers: List[Dict[str, str]],
     for data in customers:
         customer = Customer(name=data["name"], food=data["food"])
         customer_instances.append(customer)
-        CinemaBar.sell_product(product=customer.food, customer=customer)
+        if customer.food:
+            CinemaBar.sell_product(product=customer.food, customer=customer)
 
     cleaner_instance = Cleaner(name=cleaner)
     hall = CinemaHall(number=hall_number)
