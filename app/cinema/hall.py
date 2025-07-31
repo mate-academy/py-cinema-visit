@@ -1,5 +1,5 @@
 from __future__ import annotations
-from app.cinema.bar import Customer
+from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
