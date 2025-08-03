@@ -63,7 +63,7 @@ def test_cinema_visit(customers, hall_number, cleaner, movie, output):
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cinema_visit(customers, hall_number, cleaner, movie)
+        cinema_visit(hall_number, cleaner, movie, customers)
 
     out = f.getvalue()
 
