@@ -3,7 +3,7 @@ import io
 from contextlib import redirect_stdout
 
 from app.cinema.bar import CinemaBar
-from app.main import Customer  # ✅ Zakładając, że Customer jest w main.py
+from app.people.customer import Customer  # ✅ Zakładając, że Customer jest w main.py
 
 
 def test_cinema_bar_sell_product():

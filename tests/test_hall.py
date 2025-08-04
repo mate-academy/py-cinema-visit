@@ -7,18 +7,18 @@ from app.people.customer import Customer
 
 
 def test_cinema_hall_constructor():
-    ch = CinemaHall(6)  # argument pozycyjny, bez nazwanego 'number'
+    ch = CinemaHall("6")
     assert hasattr(ch, "hall_number"), (
         "CinemaHall instance should have 'hall_number' attribute"
     )
-    assert ch.hall_number == 6, (
-        "Value of attribute 'hall_number' should equal to 6 when "
-        "instance is created by 'CinemaHall(6)'"
+    assert ch.hall_number == "6", (
+        "Value of attribute 'hall_number' should equal to '6' when "
+        "instance is created by 'CinemaHall(\"6\")'"
     )
 
 
 def test_cinema_hall_movie_session():
-    hall = 4
+    hall = "4"
     ch = CinemaHall(hall)  # argument pozycyjny
 
     customer1_name = "Max"
