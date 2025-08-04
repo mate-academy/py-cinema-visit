@@ -1,10 +1,9 @@
 import pytest
 import io
-
 from contextlib import redirect_stdout
 
 from app.cinema.bar import CinemaBar
-from app.people.customer import Customer
+from app.people.customer import Customer  # ✅ Zakładając, że Customer jest w main.py
 
 
 def test_cinema_bar_sell_product():
@@ -15,7 +14,7 @@ def test_cinema_bar_sell_product():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cb.sell_product(customer=customer, product=customer.food)
+        cb.sell_product(customer=customer, product=customer.food)  # ✅ poprawione wcięcie
 
     out = f.getvalue()
     output = "Cinema bar sold Sprite to Alice.\n"
