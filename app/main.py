@@ -13,7 +13,7 @@ def cinema_visit(
     customer_objects = [Customer(c["name"], c["food"]) for c in customers]
 
     for customer in customer_objects:
-        CinemaBar.sell_product(customer, customer.food)
+        CinemaBar.sell_product(customer.food, customer)
 
     CinemaHall(hall_number).movie_session(
         movie,
