@@ -4,14 +4,12 @@ from typing import List
 
 
 class CinemaHall:
-    def __init__(self, number: int):
+    def __init__(self, number: int) -> None:
         self.hall_number = number
         self.number = number
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Cinema hall {self.hall_number}"
-
-
 
     def movie_session(
         self,
@@ -24,4 +22,3 @@ class CinemaHall:
             customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.hall_number)
-
