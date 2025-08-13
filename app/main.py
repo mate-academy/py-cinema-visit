@@ -4,12 +4,11 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from typing import List, Dict
 
-
 def cinema_visit(
-    customers: List[Dict[str, str]],
+    customers: list,
     hall_number: int,
     cleaner: str,
-    movie: str
+    movie: str,
 ) -> None:
     # Создаём объекты Customer
     customer_objects = [
@@ -23,6 +22,7 @@ def cinema_visit(
     # Создаём объект CinemaHall
     hall = CinemaHall(number=hall_number)
 
+
     # Создаём объект Cleaner
     cleaning_staff = Cleaner(name=cleaner)
 
@@ -30,5 +30,5 @@ def cinema_visit(
     hall.movie_session(
         movie_name=movie,
         customers=customer_objects,
-        cleaning_staff=cleaning_staff
+        cleaning_staff=cleaning_staff,
     )
