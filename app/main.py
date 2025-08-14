@@ -11,20 +11,22 @@ def cinema_visit(
     cleaner: str,
     movie: str
 ) -> None:
-    """Simulate a cinema visit."""
+
     customer_objects = [
         Customer(
-            name=customer_data["name"],
-            food=customer_data["food"]
+            name=customer_data.get("name"),
+            food=customer_data.get("food")
         )
         for customer_data in customers
     ]
 
+    bar = CinemaBar()
     for customer in customer_objects:
-        CinemaBar.sell_product(
-            product=customer.food,
-            customer=customer
-        )
+        if customer.food:
+            bar.sell_product(
+                product=customer.food,
+                customer=customer
+            )
 
     hall = CinemaHall(hall_number=hall_number)
     cleaner_obj = Cleaner(name=cleaner)
@@ -34,3 +36,4 @@ def cinema_visit(
         customers=customer_objects,
         cleaning_staff=cleaner_obj
     )
+
