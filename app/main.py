@@ -12,14 +12,7 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    customers_list = []
-
-    for customer_dict in customers:
-        customer = Customer(
-            customer_dict["name"],
-            customer_dict["food"]
-        )
-        customers_list.append(customer)
+    customers_list = [Customer(c["name"], c["food"]) for c in customers]
 
     for customer in customers_list:
         CinemaBar.sell_product(customer.food, customer)
