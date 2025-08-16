@@ -5,7 +5,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-    movie: str, customers: list[dict[str, str]], hall_number: int, cleaner: str
+    customers: list[dict[str, str]], hall_number: int, cleaner: str, movie: str
 ) -> None:
     customer_objs: list[Customer] = [
         Customer(name=c["name"], food=c["food"]) for c in customers
