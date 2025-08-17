@@ -6,7 +6,7 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(
-    customers: List[Dict[str, str]],  # list of dicts with keys "name" and "food"
+    customers: List[Dict[str, str]],
     hall_number: int,
     cleaner: str,
     movie: str
@@ -14,13 +14,11 @@ def cinema_visit(
     cinema_hall = CinemaHall(hall_number)
     cleaning_staff = Cleaner(cleaner)
 
-    customer_list = [
-        Customer(
-            c["name"],
-            c["food"]
+    customer_list = []
+    for customer_data in customers:
+        customer_list.append(
+            Customer(customer_data["name"], customer_data["food"])
         )
-        for c in customers
-    ]
 
     for customer in customer_list:
         CinemaBar.sell_product(
@@ -28,4 +26,8 @@ def cinema_visit(
             customer=customer
         )
 
-    cinema_hall.movie_session(movie, customer_list, cleaning_staff)
+    cinema_hall.movie_session(
+        movie,
+        customer_list,
+        cleaning_staff
+    )
