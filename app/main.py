@@ -3,29 +3,28 @@ from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
-from typing import List
-
 
 def cinema_visit(
-    customers: List[Customer],
-    hall_number: int,
-    cleaner: Cleaner,
-    movie: str
+    movie: str, customers: list[dict], hall_number: int, cleaner: str
 ) -> None:
-    ...
+    # Create Customer instances
+    customers_instances = [
+        Customer(name=cust['name'], food=cust['food']) for cust in customers
+    ]
 
-    """
-    Function to manage serving a movie in a cinema hall.
+    # Create Cleaner instance
+    cleaner_instance = Cleaner(name=cleaner, hall_number=hall_number)
 
-    Args:
-        customers (List[Customer]): List of customers attending.
-        hall_number (int): The hall number where the movie is being shown.
-        cleaner (Cleaner): Cleaner assigned to the hall.
-        movie (str): The movie to be played.
-    """
-    hall = CinemaHall(hall_number, cleaner, movie)
-    hall.clean_hall()
+    # Serve food to each customer
+    for customer_instance in customers_instances:
+        CinemaBar.sell_product(
+            product=customer_instance.food, customer=customer_instance
+        )
 
-    for customer in customers:
-        hall.admit_customer(customer)
-        CinemaBar.serve_food(customer)
+    # Create CinemaHall instance and start movie session
+    cinema_hall = CinemaHall(hall_number=hall_number)
+    cinema_hall.movie_session(
+        movie_name=movie,
+        customers=customers_instances,
+        cleaning_staff=cleaner_instance
+    )
