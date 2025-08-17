@@ -6,7 +6,12 @@ from app.people.cinema_staff import Cleaner
 from typing import List
 
 
-def cinema_visit(customers: List[Customer], hall_number: int, cleaner: Cleaner, movie: str) -> None:
+def cinema_visit(
+    customers: List[Customer],
+    hall_number: int,
+    cleaner: Cleaner,
+    movie: str
+) -> None:
     ...
 
     """
@@ -24,4 +29,3 @@ def cinema_visit(customers: List[Customer], hall_number: int, cleaner: Cleaner, 
     for customer in customers:
         hall.admit_customer(customer)
         CinemaBar.serve_food(customer)
-
