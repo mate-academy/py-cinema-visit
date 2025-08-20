@@ -5,10 +5,10 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(
-        movie: str,
         customers: list,
         hall_number: int,
-        cleaner: str) -> None:
+        cleaner: str,
+        movie: str,) -> None:
     cinema_hall = CinemaHall(hall_number)
 
     customers_instance_list = [Customer(person.get("name"), person.get("food"))
