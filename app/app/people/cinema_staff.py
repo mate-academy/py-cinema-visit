@@ -1,6 +1,3 @@
-from app.cinema.bar import CinemaBar
-from app.cinema.hall import CinemaHall
-
 class Cleaner:
     def __init__(self, name: str) -> None:
         self.name = name

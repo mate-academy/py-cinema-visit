@@ -1,7 +1,3 @@
-
-from app.cinema.bar import CinemaBar
-from app.cinema.hall import CinemaHall
-
 class Customer:
     def __init__(self, name: str, food: str) -> None:
         self.name = name
