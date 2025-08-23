@@ -14,15 +14,15 @@ class CinemaHall:
         cleaning_staff: List[Cleaner]
     ) -> None:
 
-        print(f"\"{movie_name}\" started in hall number {self.hall_number}.")
+        print(f'\"{movie_name}\" started in hall number {self.hall_number}.')
 
         if not isinstance(cleaning_staff, list):
             cleaning_staff = [cleaning_staff]
 
         for customer in customers:
-            print(f"{customer.name} is watching \"{movie_name}\".")
+            print(f'{customer.name} is watching \"{movie_name}\".')
 
-        print(f"\"{movie_name}\" ended.")
+        print(f'\"{movie_name}\" ended.')
 
         for worker in cleaning_staff:
             worker.clean_hall(self.hall_number)
