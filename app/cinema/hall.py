@@ -4,8 +4,8 @@ from typing import List
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+    def __init__(self, number: int) -> None:
+        self.number = number
 
     def movie_session(
         self,
@@ -14,11 +14,11 @@ class CinemaHall:
         cleaning_staff: Cleaner
     ) -> None:
 
-        print(f'\"{movie_name}\" started in hall number {self.hall_number}.')
+        print(f'\"{movie_name}\" started in hall number {self.number}.')
 
         for customer in customers:
             print(f'{customer.name} is watching \"{movie_name}\".')
 
         print(f'\"{movie_name}\" ended.')
 
-        cleaning_staff.clean_hall(self.hall_number)
+        cleaning_staff.clean_hall(self.number)
