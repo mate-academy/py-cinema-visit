@@ -22,4 +22,3 @@ class CinemaHall:
         print(f'\"{movie_name}\" ended.')
 
         cleaning_staff.clean_hall(self.hall_number)
-
