@@ -6,7 +6,8 @@ from app.people.customer import Customer
 
 class CinemaHall:
     def __init__(self, number: int) -> None:
-        # Храним номер зала в понятном поле
+        # Сохраняем оба имени, чтобы удовлетворить и тесты, и читаемость
+        self.number = number
         self.hall_number = number
 
     def movie_session(
@@ -15,8 +16,8 @@ class CinemaHall:
         customers: List[Customer],
         cleaning_staff: Cleaner,
     ) -> None:
-        print(f'"{movie_name}" started in hall number {self.hall_number}.')
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
-        cleaning_staff.clean_hall(self.hall_number)
+        cleaning_staff.clean_hall(self.number)
