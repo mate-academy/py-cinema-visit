@@ -5,8 +5,9 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+    def __init__(self, number: int) -> None:
+        # Храним номер зала в понятном поле
+        self.hall_number = number
 
     def movie_session(
         self,
