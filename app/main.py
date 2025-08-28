@@ -10,6 +10,7 @@ def cinema_visit(
         cleaner: str,
         movie: str
 ) -> None:
+
     customer_objects = []
     for customer in customers:
         customer_obj = Customer(name=customer["name"], food=customer["food"])
