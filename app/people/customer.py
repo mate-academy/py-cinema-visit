@@ -3,8 +3,5 @@ class Customer:
         self.name = name
         self.food = food
 
-    def __str__(self) -> str:
-        return self.name
-
-    def watch_movie(self, movie: str) -> str:
-        print(f'{self.name} is watching "{movie}".')
+    def watch_movie(self, movie_name: str):
+        print(f'{self.name} is watching "{movie_name}".')
