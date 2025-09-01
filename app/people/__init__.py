@@ -1,5 +1,5 @@
-from .cinema_staff import Cleaner
-from .customer import Customer
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
-__all__ = Cleaner, Customer
+__all__ = "Cleaner", "Customer"
