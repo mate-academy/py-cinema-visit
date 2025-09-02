@@ -7,7 +7,7 @@ from app.cinema.bar import CinemaBar
 def cinema_visit(customers,
                  hall_number,
                  cleaner,
-                 movie) -> None:
+                 movie):
     customer_list = []
     for customer in customers:
         customer_obj = Customer(customer["name"], customer["food"])
