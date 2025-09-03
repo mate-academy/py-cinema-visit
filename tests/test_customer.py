@@ -7,12 +7,8 @@ from app.people.customer import Customer
 
 def test_customer_constructor():
     customer = Customer(name="Bob", food="popcorn")
-    assert hasattr(customer, "name"), (
-        "Customer instance should have 'name' attribute"
-    )
-    assert hasattr(customer, "food"), (
-        "Customer instance should have 'food' attribute"
-    )
+    assert hasattr(customer, "name"), "Customer instance should have 'name' attribute"
+    assert hasattr(customer, "food"), "Customer instance should have 'food' attribute"
     assert customer.name == "Bob", (
         f"Value of attribute 'name' should equal to 'Bob' when "
         f"instance is created by 'Customer(name='Bob', food='popcorn')'"
