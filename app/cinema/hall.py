@@ -4,7 +4,7 @@ from app.people.customer import Customer
 
 class CinemaHall:
     def __init__(self, hall_number: int) -> None:
-        self.hall_number  = hall_number
+        self.hall_number = hall_number
 
     def movie_session(self,
                       movie_name: str,
