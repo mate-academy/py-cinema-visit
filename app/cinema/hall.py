@@ -3,7 +3,7 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(self, hall_number : int) -> None:
+    def __init__(self, hall_number: int) -> None:
         self.hall_number  = hall_number
 
     def movie_session(self,
@@ -14,4 +14,4 @@ class CinemaHall:
         for customer in customers:
             customer.watch_movie(movie_name)
         print(f'\"{movie_name}\" ended.')
-        cleaning_staff.clean_hall(self.hall_number )
+        cleaning_staff.clean_hall(self.hall_number)
