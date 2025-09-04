@@ -4,10 +4,10 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(movie: str,
-                 customers: list[dict],
+def cinema_visit(customers: list[dict],
                  hall_number: int,
-                 cleaner: str) -> None:
+                 cleaner: str,
+                 movie: str) -> None:
 
     # Create Customer objects from the list of dictionaries
     customer_objects = [Customer(c["name"],
