@@ -3,8 +3,8 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(self, number: int):
-        self.number = number
+    def __init__(self, hall_number: int):
+        self.number = hall_number
 
     def movie_session(self, movie_name: str,
                       customers: list[Customer],
