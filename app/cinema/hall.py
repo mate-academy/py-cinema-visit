@@ -7,10 +7,13 @@ class CinemaHall:
         self.number = number
 
     def movie_session(
-        self, movie: str, customers: list, cleaner: Cleaner
+        self,
+        movie_name: str,
+        customers: list,
+        cleaning_staff: Cleaner,
     ) -> None:
-        print(f'"{movie}" started in hall number {self.number}.')
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
-            customer.watch_movie(movie)
-        print(f'"{movie}" ended.')
-        cleaner.clean_hall(self.number)
+            customer.watch_movie(movie=movie_name)
+        print(f'"{movie_name}" ended.')
+        cleaning_staff.clean_hall(hall_number=self.number)
