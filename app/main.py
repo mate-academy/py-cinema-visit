@@ -11,7 +11,7 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    hall_num = CinemaHall(hall_number)
+    hall = CinemaHall(hall_number)
 
     cleaner_for_this_hall = Cleaner(cleaner)
 
@@ -20,10 +20,10 @@ def cinema_visit(
     for customer in customers:
         cust, food = customer["name"], customer["food"]
         cust = Customer(cust, food)
-        CinemaBar.sell_product(customer=cust, product=food)
+        CinemaBar.sell_product(product=food, customer=cust)
         customer_objects.append(cust)
 
-    hall_num.movie_session(
+    hall.movie_session(
         movie_name=movie,
         customers=customer_objects,
         cleaning_staff=cleaner_for_this_hall
