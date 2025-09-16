@@ -1,7 +1,7 @@
 # main.py
-from app.Cinema.bar import CinemaBar
+from app.cinema.bar import CinemaBar
 from app.people.customer import Customer
-from app.Cinema.hall import CinemaHall
+from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 
 
