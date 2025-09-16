@@ -1,5 +1,4 @@
 # main.py
-
 from app.Cinema.bar import CinemaBar
 from app.people.customer import Customer
 from app.Cinema.hall import CinemaHall

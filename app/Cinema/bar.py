@@ -1,4 +1,4 @@
-# app/cinema/bar.py
+from __future__ import annotations
 
 class CinemaBar:
     @staticmethod
