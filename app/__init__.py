@@ -1,2 +1,1 @@
-# absoluto: NADA de import relativo aqui
-from app.main import cinema_visit
+from app.main import cinema_visit  # noqa: F401

@@ -7,4 +7,4 @@ class Customer:
     # ✅ Nome de método EXATO
     def watch_movie(self, movie: str) -> None:
         # Ajuste a frase se os testes checarem string literal
-        print(f"{self.name} is watching {movie}")
+        print(f'{self.name} is watching {movie}')

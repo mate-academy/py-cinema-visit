@@ -9,3 +9,4 @@ per-file-ignores =
     app/__init__.py: Q000
     app/cinema/__init__.py: Q000
     app/people/__init__.py: Q000
+    main.py: Q000, VNE001, VNE002

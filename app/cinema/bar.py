@@ -7,6 +7,6 @@ if TYPE_CHECKING:
 
 class CinemaBar:
     @staticmethod
-    def sell_product(product: str, customer: "Customer") -> None:
+    def sell_product(product: str, customer: 'Customer') -> None:
         # Ajuste a mensagem se seus testes exigirem um texto específico
-        print(f"{customer.name} buys {product} in the cinema bar")
+        print(f'{customer.name} buys {product} in the cinema bar')

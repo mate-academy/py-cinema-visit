@@ -2,7 +2,7 @@ from typing import Optional
 
 
 def print_line(width: int = 40) -> None:
-    print("-" * width)
+    print('-' * width)
 
 
 def ask_int(prompt: str) -> Optional[int]:
