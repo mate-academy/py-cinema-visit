@@ -1,28 +1,31 @@
+from typing import Iterable
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers, hall_number, cleaner, movie) -> None:
-    """
-    Orquestra a visita ao cinema:
-    - Vende os itens do bar para cada cliente
-    - Inicia a sessão no hall especificado
-    - Cada cliente assiste ao filme
-    - O cleaner limpa o hall ao final
-    (Tudo via prints, conforme os testes esperam.)
-    """
-    bar = CinemaBar()
+def cinema_visit(
+    customers: Iterable[dict[str, str]],
+    hall_number: int,
+    cleaner: str,
+    movie: str,
+) -> None:
+    """Executa o fluxo da visita ao cinema imprimindo cada etapa."""
+    bar_service = CinemaBar()  # nome mais explícito que 'bar'
+    customer_objs: list[Customer] = []
+
+    for data in customers:
+        cust = Customer(name=data['name'], food=data['food'])
+        bar_service.sell_product(customer=cust, product=cust.food)
+        customer_objs.append(cust)
+
     hall = CinemaHall(number=hall_number)
-    cleaner_obj = Cleaner(name=cleaner)
+    cleaner_obj = Cleaner(cleaner)
 
-    # cria os objetos Customer a partir dos dicionários de entrada
-    customer_objs = [Customer(name=c["name"], food=c["food"]) for c in customers]
-
-    # vende os produtos antes do filme
-    for cust in customer_objs:
-        bar.sell_product(customer=cust, product=cust.food)
-
-    # roda a sessão do filme (imprime início, cada cliente assistindo e fim + limpeza)
-    hall.movie_session(movie, customer_objs, cleaner_obj)
+    hall.movie_session(
+        movie=movie,
+        customers=customer_objs,
+        cleaner=cleaner_obj,
+    )

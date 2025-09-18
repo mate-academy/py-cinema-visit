@@ -1,16 +1,11 @@
 [flake8]
-max-line-length = 120
+max-line-length = 88
 
-# coloque comentários apenas em linhas separadas como esta
-extend-ignore =
-    E203
-    W503
-    E302
+extend-ignore = ANN101, ANN102, W503
 
-exclude =
-    .venv,
-    .git,
-    .pytest_cache,
-    __pycache__,
-    .vscode,
-    tests, tests_simple
+exclude = .venv, .git, __pycache__, .pytest_cache, tests, tests_simple
+
+per-file-ignores =
+    app/__init__.py: Q000
+    app/cinema/__init__.py: Q000
+    app/people/__init__.py: Q000

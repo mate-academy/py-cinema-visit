@@ -1,20 +1,24 @@
-# app/cinema/hall.py
-from typing import Iterable
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.people.customer import Customer
+    from app.people.cinema_staff import Cleaner
+
 
 class CinemaHall:
-    """Sala de cinema (compatível com os testes)."""
+    def __init__(self: 'CinemaHall', number: int = 1, capacity: int = 100) -> None:
+        self.number: int = number
+        self.capacity: int = capacity
 
-    def __init__(self, number: int, capacity: int = 100) -> None:
-        self.number = number
-        self.capacity = capacity
-
-    def movie_session(self, movie_name: str, customers: Iterable, cleaner) -> None:
-        # 1) início da sessão
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
-        # 2) cada cliente assistindo
-        for c in customers:
-            print(f"{c.name} is watching \"{movie_name}\".")
-        # 3) fim da sessão
-        print(f"\"{movie_name}\" ended.")
-        # 4) limpeza
-        print(cleaner.clean(self))
+    def movie_session(
+        self: 'CinemaHall',
+        movie_name: str,
+        customers: list['Customer'],
+        cleaner: 'Cleaner',
+    ) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
+        for customer in customers:
+            print(f'{customer.name} is watching "{movie_name}".')
+        print(f'"{movie_name}" ended.')
+        cleaner.clean_hall(self.number)
