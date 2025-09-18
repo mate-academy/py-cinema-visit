@@ -1,19 +1,23 @@
-from app.cinema.bar import CinemaBar, sell_product
+from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
-def cinema_visit(customers, hall_number, cleaner, movie):
-    # 1) Створюємо об’єкти Customer
+def cinema_visit(movie, customers, hall_number, cleaner):
+    # 1) build Customer objects
     customer_objs = [Customer(c["name"], c["food"]) for c in customers]
 
-    # 2) Продаємо їжу через CinemaBar
+    # 2) sell food via static method on the class
     for cust in customer_objs:
-        sell_product(customer=cust, product=cust.food)
+        CinemaBar.sell_product(product=cust.food, customer=cust)
 
-    # 3) Підготовка залу і Cleaner
+    # 3) prepare hall and Cleaner
     hall = CinemaHall(hall_number)
     cleaner_obj = Cleaner(cleaner)
 
-    # 4) Запуск сеансу та прибирання
-    hall.movie_session(movie, customer_objs, cleaner_obj)
+    # 4) run session and cleanup using keywords
+    hall.movie_session(
+        movie_name=movie,
+        customers=customer_objs,
+        cleaning_staff=cleaner_obj
+    )

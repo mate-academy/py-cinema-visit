@@ -1,9 +1,8 @@
-# app/cinema/bar.py
-
 class CinemaBar:
     @staticmethod
-    def sell_product(customer, product):
+    def sell_product(product, customer):
+        # product first, customer second per spec
         print(f"Cinema bar sold {product} to {customer.name}.")
 
-# цей рядок мусить бути поза рівнем класу:
+# preserve module‐level alias
 sell_product = CinemaBar.sell_product
