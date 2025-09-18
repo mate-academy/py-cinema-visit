@@ -1,3 +1,5 @@
+# app/cinema/hall.py
+
 from __future__ import annotations
 from typing import Iterable
 
@@ -6,19 +8,32 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        # Armazene apenas hall_number, conforme o spec
-        self.hall_number = hall_number
+    # Os testes chamam:
+    #   CinemaHall(number=6)  (keyword)
+    #   ch = CinemaHall(4)    (posicional)
+    def __init__(self, number: int) -> None:
+        self.number = number
 
+    # Os testes chamam:
+    #   ch.movie_session(movie_name, [customer1, customer2], cleaner)
     def movie_session(
         self,
         movie_name: str,
         customers: Iterable[Customer],
-        cleaning_staff: Cleaner,
+        cleaner: Cleaner,
     ) -> None:
-        # Chame customer.watch_movie(movie=...)
-        for customer in customers:
-            customer.watch_movie(movie=movie_name)
+        # Linha de início EXATA:
+        # '"I\'m Robot" started in hall number 4.\n'
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
-        # E depois cleaning_staff.clean_hall(hall_number=...)
-        cleaning_staff.clean_hall(hall_number=self.hall_number)
+        # Clientes assistem (usa Customer.watch_movie com aspas no título)
+        for customer in customers:
+            customer.watch_movie(movie_name)
+
+        # Linha de término EXATA:
+        # '"I\'m Robot" ended.\n'
+        print(f'"{movie_name}" ended.')
+
+        # Limpeza EXATA:
+        # 'Cleaner John is cleaning hall number 4.\n'
+        cleaner.clean_hall(hall_number=self.number)
