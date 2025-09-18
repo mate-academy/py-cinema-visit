@@ -1,20 +1,21 @@
+from __future__ import annotations
+
+from app.cinema.bar import CinemaBar  # only for type hints
+
+
 class Customer:
-    def __init__(self, name: str, food: str, balance: int = 0):
-        self.name = name
-        self.food = food
-        self.balance = balance
+    """Representa um cliente do cinema."""
 
-    def __repr__(self) -> str:
-        return f"Customer(name={self.name!r}, food={self.food!r}, balance={self.balance})"
+    def __init__(self: 'Customer', name: str, food: str, balance: int = 0) -> None:
+        self.name: str = name
+        self.balance: int = balance
+        self.food: str = food  # item de comida comprado (opcional)
 
-    def watch(self, movie_name: str) -> None:
+    def watch(self: 'Customer', movie_name: str) -> None:
         print(f'{self.name} is watching "{movie_name}".')
 
-    # Alguns testes costumam chamar esses helpers:
-    def watch_movie(self, movie_name: str) -> None:
-        # atende aos testes que chamam watch_movie
+    def watch_movie(self: 'Customer', movie_name: str) -> None:
         self.watch(movie_name)
 
-    def buy_food(self, bar) -> None:
-        # delega a venda para o bar
-        bar.sell_product(customer=self, product=self.food)
+    def buy_food(self: 'Customer', cinema_bar: CinemaBar, product: str) -> None:
+        cinema_bar.sell_product(customer=self, product=product)
