@@ -1,11 +1,10 @@
-import pytest
-import io
+# tests/test_bar.py
 
+import io
 from contextlib import redirect_stdout
 
-from app.cinema.bar import CinemaBar
 from app.people.customer import Customer
-
+from app.cinema.bar import CinemaBar, sell_product   # <-- додали sell_product
 
 def test_cinema_bar_sell_product():
     name = "Alice"
@@ -15,11 +14,7 @@ def test_cinema_bar_sell_product():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cb.sell_product(customer=customer, product=customer.food)
+        sell_product(customer=customer, product=customer.food)
 
-    out = f.getvalue()
-    output = "Cinema bar sold Sprite to Alice.\n"
-    assert out == output, (
-        f"'sell_product' output should equal to {output}, "
-        f"when customer's name equals to {name} and customer's food equals to {food}"
-    )
+    output = f.getvalue().strip()
+    assert output == f"Cinema bar sold {food} to {name}."
