@@ -1,8 +1,9 @@
-class CinemaStaff:
+# app/people/cinema_staff.py
+
+class Cleaner:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    # ✅ Somente este método público; deve APENAS imprimir
+    # O spec/CI pedem apenas imprimir, sem retornar nada
     def clean_hall(self, hall_number: int) -> None:
-        # Ajuste a frase se os testes checarem string literal
         print(f'{self.name} is cleaning hall {hall_number}')

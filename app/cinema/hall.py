@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Iterable
 
 from app.people.customer import Customer
-from app.people.cinema_staff import CinemaStaff
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -14,7 +14,7 @@ class CinemaHall:
         self,
         movie_name: str,
         customers: Iterable[Customer],
-        cleaning_staff: CinemaStaff,
+        cleaning_staff: Cleaner,
     ) -> None:
         # Chame customer.watch_movie(movie=...)
         for customer in customers:
