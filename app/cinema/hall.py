@@ -1,24 +1,20 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
+from typing import Iterable
 
-if TYPE_CHECKING:
-    from app.people.customer import Customer
-    from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
+from app.people.cinema_staff import CinemaStaff
 
 
 class CinemaHall:
-    def __init__(self: 'CinemaHall', number: int = 1, capacity: int = 100) -> None:
-        self.number: int = number
-        self.capacity: int = capacity
+    def __init__(self, hall_number: int) -> None:
+        # ✅ Somente hall_number armazenado
+        self.hall_number = hall_number
 
-    def movie_session(
-        self: 'CinemaHall',
-        movie_name: str,
-        customers: list['Customer'],
-        cleaner: 'Cleaner',
-    ) -> None:
-        print(f'"{movie_name}" started in hall number {self.number}.')
+    # ✅ Assinatura EXATA exigida
+    def movie_session(self, movie_name: str, customers: Iterable[Customer], cleaning_staff: CinemaStaff) -> None:
+        # ✅ Chama o método com keyword exatamente como descrito
         for customer in customers:
-            print(f'{customer.name} is watching "{movie_name}".')
-        print(f'"{movie_name}" ended.')
-        cleaner.clean_hall(self.number)
+            customer.watch_movie(movie=movie_name)
+
+        # ✅ Chama com keyword arg 'hall_number='
+        cleaning_staff.clean_hall(hall_number=self.hall_number)

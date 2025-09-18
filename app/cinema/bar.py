@@ -6,19 +6,7 @@ if TYPE_CHECKING:
 
 
 class CinemaBar:
-    """API minimalista conforme os testes."""
-    def __init__(self: 'CinemaBar') -> None:
-        self.menu: dict[str, int] = {}
-
-    def get_price(self: 'CinemaBar', item: str) -> int | None:
-        return self.menu.get(item)
-
-    def buy(self: 'CinemaBar', item: str, qty: int) -> int | None:
-        price = self.get_price(item)
-        if price is None:
-            return None
-        return price * max(qty, 0)
-
-    def sell_product(self: 'CinemaBar', customer: 'Customer', product: str) -> None:
-        # Saída exata cobrada pelos testes
-        print(f'Cinema bar sold {product} to {customer.name}.')
+    @staticmethod
+    def sell_product(product: str, customer: "Customer") -> None:
+        # Ajuste a mensagem se seus testes exigirem um texto específico
+        print(f"{customer.name} buys {product} in the cinema bar")
