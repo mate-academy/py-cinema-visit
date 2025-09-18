@@ -24,4 +24,3 @@ def cinema_visit(
         customers=customer_objects,
         cleaning_staff=cleaning_staff,
     )
-

@@ -6,14 +6,14 @@ from app.people.customer import Customer
 
 class CinemaHall:
     def __init__(
-        self: 'CinemaHall',
+        self: "CinemaHall",
         hall_number: Optional[int] = None,
         number: Optional[int] = None,
     ) -> None:
         self.number = hall_number if hall_number is not None else number
 
     def movie_session(
-        self: 'CinemaHall',
+        self: "CinemaHall",
         movie_name: str,
         customers: List[Customer],
         cleaning_staff: Cleaner,
