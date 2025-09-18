@@ -1,16 +1,12 @@
-from typing import List, Optional
+from typing import List
 
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(
-        self: "CinemaHall",
-        hall_number: Optional[int] = None,
-        number: Optional[int] = None,
-    ) -> None:
-        self.number = hall_number if hall_number is not None else number
+    def __init__(self, number: int) -> None:
+        self.number = number
 
     def movie_session(
         self: "CinemaHall",
