@@ -19,24 +19,47 @@ def _as_cleaner(obj: Union[Cleaner, str, dict]) -> Cleaner:
         return obj
     if isinstance(obj, str):
         return Cleaner(name=obj)
-    # Se vier dict com 'name'
     return Cleaner(name=obj['name'])
+
+
+def _normalize_customers(
+    customers: Union[Iterable[Union[Customer, dict]], Customer, dict, int, str, bytes]
+) -> list[Customer]:
+    # Caso único objeto válido
+    if isinstance(customers, (Customer, dict)):
+        return [_as_customer(customers)]
+    # Strings/bytes não são coleções válidas aqui
+    if isinstance(customers, (str, bytes)):
+        raise TypeError(
+            'customers must be an iterable of Customer or dict, not a string/bytes'
+        )
+    # Ints (erro reportado no CI)
+    if isinstance(customers, int):
+        raise TypeError(
+            'customers must be an iterable of Customer or dict, not an int'
+        )
+    # Iterável “normal”
+    try:
+        return [_as_customer(c) for c in customers]  # type: ignore[arg-type]
+    except TypeError as exc:
+        # Captura casos “não iteráveis” customizados
+        raise TypeError(
+            'customers must be an iterable of Customer or dict'
+        ) from exc
 
 
 def cinema_visit(
     movie: str,
-    customers: Iterable[Union[Customer, dict]],
+    customers: Union[Iterable[Union[Customer, dict]], Customer, dict, int, str, bytes],
     hall_number: int,
     cleaner: Union[Cleaner, str, dict],
 ) -> None:
-    # Construir UMA lista reutilizável de customers
-    customer_list = [_as_customer(customer) for customer in customers]
+    customer_list = _normalize_customers(customers)
 
     # Usar a classe diretamente (não instanciar CinemaBar)
     for customer in customer_list:
         CinemaBar.sell_product(product=customer.food, customer=customer)
 
-    # Reusar customer_list na sessão do hall
     cleaner_obj = _as_cleaner(cleaner)
     hall = CinemaHall(hall_number=hall_number)
     hall.movie_session(
