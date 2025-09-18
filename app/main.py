@@ -15,7 +15,7 @@ def cinema_visit(
     bar_service = CinemaBar()  # nome mais explícito que 'bar'
 
     for data in customers:
-        cust = Customer(name=data["name"], food=data["food"])
+        cust = Customer(name=data['name'], food=data['food'])
         bar_service.sell_product(customer=cust, product=cust.food)
 
     hall = CinemaHall(number=hall_number)
@@ -24,6 +24,6 @@ def cinema_visit(
     # ✅ chamada corrigida: argumentos posicionais
     hall.movie_session(
         movie,
-        [Customer(c["name"], c["food"]) for c in customers],
+        [Customer(c['name'], c['food']) for c in customers],
         cleaner_obj,
     )
