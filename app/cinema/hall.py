@@ -15,7 +15,7 @@ class CinemaHall:
         # przyjmij oba warianty i ustaw DWIE nazwy atrybutów
         value = hall_number if hall_number is not None else number
         self.hall_number = value
-        self.number = value  # <-- dodane, żeby test hasattr(ch, "number") przechodził
+        self.number = value
 
     def movie_session(
         self,
