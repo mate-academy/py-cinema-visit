@@ -1,5 +1,8 @@
 from __future__ import annotations
-from app.people.customer import Customer
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.people.customer import Customer
 
 
 class CinemaBar:

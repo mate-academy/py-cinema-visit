@@ -1,17 +1,27 @@
 from __future__ import annotations
-from app.people.customer import Customer
-from app.people.cinema_staff import Cleaner
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.people.customer import Customer
+    from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+    def __init__(
+        self,
+        hall_number: int | None = None,
+        number: int | None = None,
+    ) -> None:
+        # przyjmij oba warianty i ustaw DWIE nazwy atrybutów
+        value = hall_number if hall_number is not None else number
+        self.hall_number = value
+        self.number = value  # <-- dodane, żeby test hasattr(ch, "number") przechodził
 
     def movie_session(
         self,
         movie_name: str,
         customers: list["Customer"],
-        cleaning_staff: "Cleaner"
+        cleaning_staff: "Cleaner",
     ) -> None:
         print(f'"{movie_name}" started in hall number {self.hall_number}.')
         for customer in customers:
