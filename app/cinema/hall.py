@@ -10,7 +10,7 @@ class CinemaHall:
             movie_name: str,
             customers: list,
             cleaning_staff: Any
-    )-> None:
+    ) -> None:
         print(f'"{movie_name}" started in hall number {self.hall_number}.')
         for i in customers:
             i.watch_movie(movie=movie_name)
