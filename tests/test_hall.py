@@ -8,19 +8,19 @@ from app.people.customer import Customer
 
 
 def test_cinema_hall_constructor():
-    ch = CinemaHall(number=6)
-    assert hasattr(ch, "number"), (
-        "CinemaHall instance should have 'number' attribute"
+    ch = CinemaHall(hall_number=6)
+    assert hasattr(ch, "hall_number"), (
+        "CinemaHall instance should have 'hall_number' attribute"
     )
-    assert ch.number == 6, (
-        f"Value of attribute 'number' should equal to 6 when "
-        f"instance is created by 'CinemaHall(number=6)'"
+    assert ch.hall_number == 6, (
+        f"Value of attribute 'hall_number' should equal to 6 when "
+        f"instance is created by 'CinemaHall(hall_number=6)'"
     )
 
 
 def test_cinema_hall_movie_session():
-    hall = 4
-    ch = CinemaHall(hall)
+    hall_number = 4
+    ch = CinemaHall(hall_number)
     customer1_name = "Max"
     food1 = "chips"
     customer1 = Customer(customer1_name, food1)
@@ -36,14 +36,14 @@ def test_cinema_hall_movie_session():
         ch.movie_session(movie_name, [customer1, customer2], cleaner)
 
     out = f.getvalue()
-    output = '"I\'m Robot" started in hall number 4.\n' \
+    output = '"I\'m Robot" started in hall_number number 4.\n' \
              'Max is watching "I\'m Robot".\n' \
              'Alex is watching "I\'m Robot".\n' \
              '"I\'m Robot" ended.\n' \
-             'Cleaner John is cleaning hall number 4.\n'
+             'Cleaner John is cleaning hall_number number 4.\n'
     assert out == output, (
         f"'movie_session' output should equal to {output}, "
-        f"when hall number is {hall}, there are two customers "
+        f"when hall_number number is {hall_number}, there are two customers "
         f"{customer1_name} and {customer2_name} and cleaner's "
         f"name is {cleaner_name}"
     )
