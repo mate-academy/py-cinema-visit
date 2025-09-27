@@ -6,15 +6,15 @@ from contextlib import redirect_stdout
 from app.main import cinema_visit
 
 @pytest.mark.parametrize(
-    "customers,hall_number,cleaner,movie,output",
+    "movie,customers,hall_number,cleaner,output",
     [
         (
+            "Tenet",
             [
                 {"name": "Bob", "food": "popcorn"}
             ],
             1,
             "Anna",
-            "Tenet",
             'Cinema bar sold popcorn to Bob.\n'
             '"Tenet" started in hall number 1.\n'
             'Bob is watching "Tenet".\n'
@@ -23,13 +23,13 @@ from app.main import cinema_visit
 
         ),
         (
+            "Madagascar",
             [
                 {"name": "Bob", "food": "Coca-cola"},
                 {"name": "Alex", "food": "popcorn"}
             ],
             5,
             "Anna",
-            "Madagascar",
             'Cinema bar sold Coca-cola to Bob.\n'
             'Cinema bar sold popcorn to Alex.\n'
             '"Madagascar" started in hall number 5.\n'
@@ -39,6 +39,7 @@ from app.main import cinema_visit
             'Cleaner Anna is cleaning hall number 5.\n'
         ),
         (
+            "Interstellar",
             [
                 {"name": "Susan", "food": "Pepsi"},
                 {"name": "Michael", "food": "Coca-cola"},
@@ -46,7 +47,6 @@ from app.main import cinema_visit
             ],
             3,
             "Vasiliy",
-            "Interstellar",
             'Cinema bar sold Pepsi to Susan.\n'
             'Cinema bar sold Coca-cola to Michael.\n'
             'Cinema bar sold popcorn to Monica.\n'
@@ -59,11 +59,11 @@ from app.main import cinema_visit
         )
     ]
 )
-def test_cinema_visit(customers, hall_number, cleaner, movie, output):
+def test_cinema_visit(movie, customers, hall_number, cleaner, output):
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cinema_visit(customers, hall_number, cleaner, movie)
+        cinema_visit(movie, customers, hall_number, cleaner)
 
     out = f.getvalue()
 
