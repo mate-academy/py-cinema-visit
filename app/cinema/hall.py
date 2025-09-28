@@ -1,7 +1,20 @@
+from __future__ import annotations
+
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
+
+
 class CinemaHall:
-    def __init__(self, number) -> None:
+    def __init__(self, number: int) -> None:
         self.number = number
 
-    @staticmethod
-    def movie_session(movie_name: str, costumers: list, cleaning_staff: dict) -> None:
-        pass
+    def movie_session(
+            self,
+            movie_name: str,
+            customers: list[Customer],
+            cleaning_staff: Cleaner
+    ) -> None:
+        for customer in customers:
+            customer.watch_movie(movie_name)
+
+        cleaning_staff.clean_hall(self.number)
