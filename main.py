@@ -10,8 +10,8 @@ cleaner_name = "Anna"
 movie = "Madagascar"
 
 
-def cinema_visit(customers: list, hall_number: int,
-                 cleaner: str, movie: str) -> None:
+def cinema_visit(movie: str, customers: list, hall_number: int,
+                 cleaner: str) -> None:
     customers_combined = []
     for customer in customers:
         customers_combined.append(Customer(customer["name"], customer["food"]))
@@ -19,7 +19,7 @@ def cinema_visit(customers: list, hall_number: int,
         CinemaBar.sell_product(customer=customer, product=customer.food)
     cleaner = Cleaner(cleaner)
     ch = CinemaHall(hall_number)
-    ch.movie_session(movie, customers_combined, cleaner)
+    ch.movie_session(movie_name=movie, customers=customers_combined, cleaning_staff=cleaner)
 
 
 cinema_visit(customers=customers,
