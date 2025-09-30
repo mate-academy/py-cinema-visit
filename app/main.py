@@ -18,6 +18,6 @@ def cinema_visit(customers: list,
     cleaner = Cleaner(cleaner)
     hall = CinemaHall(hall_number)
 
-    hall.movie_session(movie_name=movie,
+    hall.movie_session(movie_namemovie,
                        customers=customers_obj,
                        cleaning_staff=cleaner)
