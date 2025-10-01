@@ -4,8 +4,9 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+    def __init__(self, hall_number: int = None, number: int = None) -> None:
+        self.hall_number = hall_number if hall_number is not None else number
+        self.number = self.hall_number
 
     def movie_session(
         self,
@@ -16,5 +17,6 @@ class CinemaHall:
         print(f'"{movie_name}" started in hall number {self.hall_number}.')
         for customer in customers:
             customer.watch_movie(movie=movie_name)
+
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(hall_number=self.hall_number)
