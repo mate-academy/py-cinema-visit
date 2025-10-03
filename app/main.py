@@ -17,7 +17,7 @@ def cinema_visit(movie: str,
         CinemaBar.sell_product(product=customer.food, customer=customer)
 
     # Step 3: Create CinemaHall and Cleaner instances
-    hall = CinemaHall(number=hall_number)
+    hall = CinemaHall(hall_number=hall_number)
     cleaner_obj = Cleaner(name=cleaner)
 
     # Step 4: Schedule movie session
