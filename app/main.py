@@ -12,7 +12,11 @@ def cinema_visit(
 ) -> None:
     humans = [Customer(info["name"], info["food"]) for info in customers]
     for customer in humans:
-        CinemaBar.sell_product(customer.food, customer)
+        CinemaBar.sell_product(product=customer.food, customer=customer)
     hall = CinemaHall(hall_number)
     clean_person = Cleaner(cleaner)
-    hall.movie_session(movie, humans, clean_person)
+    hall.movie_session(
+        movie_name=movie,
+        customers=humans,
+        cleaning_staff=clean_person
+    )
