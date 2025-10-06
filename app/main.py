@@ -1,8 +1,83 @@
-# write your imports here
+from __future__ import annotations
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
+
+
+class Distance:
+    def __init__(self, value: int | float) -> None:
+        self.value = value
+
+    def __str__(self) -> str:
+        return f"{self.value} m"
+
+    def __repr__(self) -> str:
+        return f"Distance({self.value})"
+
+    def __add__(self, other: Distance | int | float) -> Distance:
+        if isinstance(other, Distance):
+            return Distance(self.value + other.value)
+        elif isinstance(other, (int, float)):
+            return Distance(self.value + other)
+        return NotImplemented
+
+    def __iadd__(self, other: Distance | int | float) -> Distance:
+        if isinstance(other, Distance):
+            self.value += other.value
+        elif isinstance(other, (int, float)):
+            self.value += other
+        else:
+            return NotImplemented
+        return self
+
+    def __mul__(self, other: int | float) -> Distance:
+        if isinstance(other, (int, float)):
+            return Distance(self.value * other)
+        return NotImplemented
+
+    def __truediv__(self, other: int | float) -> Distance:
+        if isinstance(other, (int, float)):
+            return Distance(self.value / other)
+        return NotImplemented
+
+    def __eq__(self, other: Distance | int | float) -> bool:
+        if isinstance(other, Distance):
+            return self.value == other.value
+        elif isinstance(other, (int, float)):
+            return self.value == other
+        return False
+
+    def __lt__(self, other: Distance | int | float) -> bool:
+        if isinstance(other, Distance):
+            return self.value < other.value
+        elif isinstance(other, (int, float)):
+            return self.value < other
+        return False
+
+    def __gt__(self, other: Distance | int | float) -> bool:
+        if isinstance(other, Distance):
+            return self.value > other.value
+        elif isinstance(other, (int, float)):
+            return self.value > other
+        return False
+
+    def __le__(self, other: Distance | int | float) -> bool:
+        if isinstance(other, Distance):
+            return self.value <= other.value
+        elif isinstance(other, (int, float)):
+            return self.value <= other
+        return False
+
+    def __ge__(self, other: Distance | int | float) -> bool:
+        if isinstance(other, Distance):
+            return self.value >= other.value
+        elif isinstance(other, (int, float)):
+            return self.value >= other
+        return False
+
+    def round(self, number: int) -> Distance:
+        return Distance(round(self.value, number))
 
 
 def cinema_visit(
