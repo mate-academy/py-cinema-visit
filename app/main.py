@@ -23,8 +23,8 @@ def cinema_visit(
     # Sell products in cinema bar
     for customer in customer_instances:
         CinemaBar.sell_product(
-            customer=customer,
-            product=customer.food
+            product=customer.food,
+            customer=customer
         )
 
     # Create CinemaHall and Cleaner instances
