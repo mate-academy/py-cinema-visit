@@ -4,15 +4,15 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, number: int = None) -> None:
-        self.number = number
+    def __init__(self, hall_number: int = None) -> None:
+        self.number = hall_number
 
     def movie_session(
             self,
             movie_name: str,
             customers: List[Customer],
             cleaning_staff: Cleaner
-        ) -> None:
+    ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
