@@ -1,1 +1,1 @@
-#init file people
+# write code here
