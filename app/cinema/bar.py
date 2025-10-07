@@ -1,6 +1,9 @@
+from app.people.customer import Customer
+
+
 class CinemaBar:
     @staticmethod
-    def sell_product(customer: object, product: str) -> None:
+    def sell_product(product: str, customer: Customer) -> None:
         if hasattr(customer, "name"):
             print(f"Cinema bar sold {product} to {customer.name}.")
         else:
