@@ -8,9 +8,9 @@ class CinemaHall:
 
     def start_end_movie(self, movie_name: str, start_or_end: str) -> None:
         if start_or_end == "start":
-            print(f"\"{movie_name}\" started in hall number {self.number}.")
+            print(f'"{movie_name}" started in hall number {self.number}.')
         elif start_or_end == "end":
-            print(f"\"{movie_name}\" ended.")
+            print(f'"{movie_name}" ended.')
 
     def movie_session(
             self,
