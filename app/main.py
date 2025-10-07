@@ -8,12 +8,16 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(
         customers: list,
         hall_number: int,
-        cleaner: str, movie: str) -> None:
-    array = []
-    for i in range(len(customers)):
-        array.append(Customer(customers[i]["name"], customers[i]["food"]))
-        CinemaBar.sell_product(array[i].food, array[i])
+        cleaner: str,
+        movie: str) -> None:
+    one_customer = []
 
-    number = CinemaHall(hall_number)
-    cleaner = Cleaner(cleaner)
-    CinemaHall.movie_session(number, movie, array, cleaner)
+    for i in range(len(customers)):
+        one_customer.append(
+            Customer(customers[i]["name"], customers[i]["food"])
+        )
+        CinemaBar.sell_product(one_customer[i].food, one_customer[i])
+
+    CinemaHall(hall_number).movie_session(
+        movie, one_customer, Cleaner(cleaner)
+    )
