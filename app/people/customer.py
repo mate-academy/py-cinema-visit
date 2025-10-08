@@ -1,9 +1,7 @@
-# app/people/customer.py
-
-class Customer(object):
-    def __init__(self, name, food):
+class Customer:
+    def __init__(self, name: str, food: str) -> None:
         self.name = name
         self.food = food
 
-    def watch_movie(self, movie):
-        print('{} is watching "{}".'.format(self.name, movie))
+    def watch(self, movie: str) -> str:
+        return f"{self.name} is watching {movie}"

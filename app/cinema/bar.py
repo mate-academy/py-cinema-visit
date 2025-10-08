@@ -1,6 +1,7 @@
-# app/cinema/bar.py
-
 class CinemaBar(object):
+    def __init__(self):
+        pass
+
     @staticmethod
-    def sell_product(product, customer):
-        print("Cinema bar sold {} to {}.".format(product, customer.name))
+    def serve(product, customer):
+        return "Serving {} to {}".format(product, customer)
