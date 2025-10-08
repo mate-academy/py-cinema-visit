@@ -1,7 +1,6 @@
-class Customer:
-    def __init__(self, name: str, food: str) -> None:
+class Customer(object):
+    def __init__(self, name):
         self.name = name
-        self.food = food
 
-    def watch(self, movie: str) -> str:
-        return f"{self.name} is watching {movie}"
+    def watch_movie(self, movie):
+        return "{} is watching {}.".format(self.name, movie)

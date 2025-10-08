@@ -1,7 +1,4 @@
-class CinemaBar:
-    def __init__(self) -> None:
-        pass
-
+class CinemaBar(object):
     @staticmethod
-    def serve(product: str, customer: str) -> str:
-        return f"Serving {product} to {customer}"
+    def sell_product(product, customer):
+        return "Cinema bar sold {} to {}.".format(product, customer)
