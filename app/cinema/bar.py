@@ -1,4 +1,4 @@
-class CinemaBar(object):
+class CinemaBar:
     @staticmethod
     def sell_product(product, customer):
-        return "Cinema bar sold {} to {}.".format(product, customer)
+        print(f"Cinema bar sold {product} to {customer.name}.")
