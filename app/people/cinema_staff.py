@@ -1,6 +1,6 @@
-class Cleaner(object):
-    def __init__(self, name):
+class Cleaner:
+    def __init__(self, name: str) -> None:
         self.name = name
 
-    def clean(self, hall_number):
-        return "{} is cleaning hall {}".format(self.name, hall_number)
+    def clean(self, hall_number: int) -> str:
+        return f"{self.name} is cleaning hall {hall_number}"
