@@ -16,7 +16,7 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) ->
     for customer_data in customers:
         # Створення екземпляра Customer
         customer = Customer(name=customer_data["name"], 
-                            food=customer_data["food"]) # Line split to fix E501 and quotes changed for Q000
+                            food=customer_data["food"])
         customer_instances.append(customer)
         
         # Продаж їжі (використовуємо статичний метод CinemaBar)
