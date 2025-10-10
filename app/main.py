@@ -22,5 +22,7 @@ def cinema_visit(
     # створюємо екземпляр CinemaHall і проводимо сеанс
     hall = CinemaHall(hall_number=hall_number)
     hall.movie_session(
-        movie_name=movie, customers=customer_objects, cleaning_staff=cleaning_staff
+        movie_name=movie,
+        customers=customer_objects,
+        cleaning_staff=cleaning_staff
     )
