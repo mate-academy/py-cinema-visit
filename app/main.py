@@ -4,9 +4,13 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+def cinema_visit(
+    customers: list, hall_number: int, cleaner: str, movie: str
+) -> None:
     # створюємо екземпляри Customer
-    customer_objects = [Customer(name=c['name'], food=c['food']) for c in customers]
+    customer_objects = [
+        Customer(name=c["name"], food=c["food"]) for c in customers
+    ]
 
     # продаємо продукти через бар
     for customer in customer_objects:
@@ -17,4 +21,6 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
 
     # створюємо екземпляр CinemaHall і проводимо сеанс
     hall = CinemaHall(hall_number=hall_number)
-    hall.movie_session(movie_name=movie, customers=customer_objects, cleaning_staff=cleaning_staff)
+    hall.movie_session(
+        movie_name=movie, customers=customer_objects, cleaning_staff=cleaning_staff
+    )
