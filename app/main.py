@@ -6,7 +6,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, 
-                 movie: str) -> None: # Line split here to fix E501
+                 movie: str) -> None:
     # write you code here
     
     # 1. Створення екземпляра Cleaner
@@ -20,9 +20,10 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str,
                             food=customer_data["food"])
         customer_instances.append(customer)
         
-        # Продаж їжі (використовуємо статичний метод CinemaBar)
+    # Продаж їжі (використовуємо статичний метод CinemaBar)
+    for customer in customer_instances:
         CinemaBar.sell_product(product=customer.food, customer=customer)
-        
+
     # 3. Створення екземпляра CinemaHall
     hall_instance = CinemaHall(hall_number=hall_number)
     
