@@ -4,17 +4,18 @@ from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
-
 def cinema_visit(customers: list, hall_number: int, cleaner: str, 
+               
+                 
                  movie: str) -> None:
-    # write you code here
     
+                   
+                   # write you code here
     # 1. Створення екземпляра Cleaner
     cleaner_instance = Cleaner(name=cleaner)
-    
-    # 2. Створення екземплярів Customer та продаж їжі через CinemaBar
+     # 2. Створення екземплярів Customer та продаж їжі через CinemaBar
     customer_instances = []
-    for customer_data in customers:
+for customer_data in customers:
         # Створення екземпляра Customer
         customer = Customer(name=customer_data["name"], 
                             food=customer_data["food"])
