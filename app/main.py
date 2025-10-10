@@ -5,7 +5,7 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
     # write you code here
     
     # 1. Створення екземпляра Cleaner
@@ -15,7 +15,8 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     customer_instances = []
     for customer_data in customers:
         # Створення екземпляра Customer
-        customer = Customer(name=customer_data['name'], food=customer_data['food'])
+        customer = Customer(name=customer_data["name"], 
+                            food=customer_data["food"]) # Line split to fix E501 and quotes changed for Q000
         customer_instances.append(customer)
         
         # Продаж їжі (використовуємо статичний метод CinemaBar)
@@ -30,5 +31,3 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         customers=customer_instances, 
         cleaning_staff=cleaner_instance
     )
-
-# pass
