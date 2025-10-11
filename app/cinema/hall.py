@@ -19,7 +19,7 @@ class CinemaHall:
         for customer in customers:
             if isinstance(customer, dict):
                 customer_name = customer.get("name")
-                print(f'{customer_name} is watching "{movie_name}".')
+                print(f"{customer_name} is watching \"{movie_name}\".")
             else:
                 customer.watch_movie(movie_name)
         print(f"\"{movie_name}\" ended.")
