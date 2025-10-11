@@ -12,10 +12,7 @@ def cinema_visit(
 ) -> None:
     customer_objects = []
     for person in customers:
-        customer = Customer(
-            name=person["name"],
-            food=person["food"]
-        )
+        customer = Customer(name=person["name"], food=person["food"])
         customer_objects.append(customer)
         CinemaBar.sell_product(customer=customer, product=customer.food)
     hall = CinemaHall(hall_number)
