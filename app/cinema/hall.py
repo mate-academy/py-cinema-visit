@@ -14,15 +14,15 @@ class CinemaHall:
             cleaning_staff: Cleaner
     ) -> None:
         print(
-            f"\"{movie_name}\" started in hall number {self.number}."
+            f'"{movie_name}" started in hall number {self.number}.'
         )
         for customer in customers:
             if isinstance(customer, dict):
                 customer_name = customer.get("name")
-                print(f"{customer_name} is watching \"{movie_name}\".")
+                print(f'{customer_name} is watching "{movie_name}".')
             else:
                 customer.watch_movie(movie=movie_name)
-        print(f"\"{movie_name}\" ended.")
+        print(f'"{movie_name}\" ended.')
         print(
             f"Cleaner {cleaning_staff.name} "
             f"is cleaning hall number {self.number}."
