@@ -10,8 +10,8 @@ class CinemaHall:
     def movie_session(
             self,
             movie_name: str,
-            customers: list | Customer,
-            cleaning_staff: int | Cleaner
+            customers: list[Customer],
+            cleaning_staff: Cleaner
     ) -> None:
         print(
             f"\"{movie_name}\" started in hall number {self.number}."
@@ -21,12 +21,9 @@ class CinemaHall:
                 customer_name = customer.get("name")
                 print(f"{customer_name} is watching \"{movie_name}\".")
             else:
-                customer.watch_movie(movie_name)
+                customer.watch_movie(movie=movie_name)
         print(f"\"{movie_name}\" ended.")
-        if isinstance(cleaning_staff, str):
-            print(
-                f"Cleaner {cleaning_staff} "
-                f"is cleaning hall number {self.number}."
-            )
-        else:
-            cleaning_staff.clean_hall(self.number)
+        print(
+            f"Cleaner {cleaning_staff.name} "
+            f"is cleaning hall number {self.number}."
+        )
