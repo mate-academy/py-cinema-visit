@@ -19,7 +19,7 @@ def cinema_visit(customers: list,
     hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     for cust in customs:
-        CinemaBar.sell_product(cust.food, cust)
+        CinemaBar.sell_product(product=cust.food, customer=cust)
     hall.movie_session(
         movie_name=movie,
         customers=customs,
