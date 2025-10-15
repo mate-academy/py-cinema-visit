@@ -10,9 +10,6 @@ def cinema_visit(customers: list[dict[str, str]],
                  movie: str
                  ) -> None:
 
-    cinema_hall = CinemaHall(number=hall_number)
-    cleaning_person = Cleaner(name=cleaner)
-
     customer_objects = []
     for person in customers:
         customer_obj = Customer(name=person["name"], food=person["food"])
@@ -22,6 +19,9 @@ def cinema_visit(customers: list[dict[str, str]],
             product=customer_obj.food,
             customer=customer_obj
         )
+
+    cinema_hall = CinemaHall(number=hall_number)
+    cleaning_person = Cleaner(name=cleaner)
 
     cinema_hall.movie_session(
         movie_name=movie,
