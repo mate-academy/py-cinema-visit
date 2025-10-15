@@ -1,13 +1,26 @@
-class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+from __future__ import annotations
+from typing import TYPE_CHECKING
 
-    def movie_session(self, movie_name: str, customers: list["Customer"], cleaning_staff: "Cleaner") -> None:
-        print(f'"{movie_name}" started in hall number {self.hall_number}.')
+if TYPE_CHECKING:
+    from app.people.customer import Customer
+    from app.people.cinema_staff import Cleaner
+
+
+class CinemaHall:
+
+    def __init__(self, number: int) -> None:
+        self.number = number
+
+    def movie_session(self,
+                      movie_name: str,
+                      customers: list["Customer"],
+                      cleaning_staff: "Cleaner"
+                      ) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
-            customer.watch_movie(movie_name)
+            print(f'{customer.name} is watching "{movie_name}".')
 
         print(f'"{movie_name}" ended.')
 
-        cleaning_staff.clean_hall(self.hall_number)
+        cleaning_staff.clean_hall(self.number)
