@@ -1,39 +1,38 @@
-# Cinema visit
+# Відвідування кінотеатру
 
-- Read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
+- Перед початком прочитайте [інструкцію](https://github.com/mate-academy/py-task-guideline/blob/main/README.md).
 
-You have opened your own cinema. To have a better idea 
-of what's going on in the cinema 
-you decided to keep a record of events in the cinema.
-For this purpose you have to create such modules:
+Ви відкрили власний кінотеатр. Щоб краще розуміти,
+що відбувається в кінотеатрі,
+ви вирішили вести облік подій.
+Для цього вам потрібно створити такі модулі:
 
-1. In directory `app` create package `cinema`. In this
-package create modules:  
-   - `bar.py` - inside this module create `CinemaBar`
-   class that describes work of cinema bar.
-   This class should have only one static method `sell_product`,
-   that takes `product` - name of the product that customer wants
-   and `customer` - `Customer` instance, that means customer.
-   The `sell_product` method sells a product to the customer and displays which product was sold and to whom.
-   
-   
-   ```python
-   cb = CinemaBar()
-   customer = Customer("Bob", "popcorn")
-   cb.sell_product(customer=customer, product=customer.food)
-   # Cinema bar sold popcorn to Bob.
-   ```
+1.  У каталозі `app` створіть пакет `cinema`. У цьому
+    пакеті створіть модулі:
+    -   `bar.py` - у цьому модулі створіть клас `CinemaBar`,
+        який описує роботу кінобару.
+        Цей клас повинен мати лише один статичний метод `sell_product`,
+        який приймає `product` - назву товару, який хоче клієнт,
+        та `customer` - екземпляр `Customer`, що означає клієнта.
+        Метод `sell_product` продає товар клієнту та відображає, який товар було продано і кому.
 
-   - `hall.py` - inside this module create `CinemaHall`
-   class that describes actions during the movie session. Its
-   `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
-   This class should have only one method `movie_session`, that
-   takes `movie_name`, `customers` - list of a customers
-   (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
-   instance). This method prints about movie start, calls 
-   customers method `watch_movie`, prints about movie end,
-   calls cleaner method `clean_hall`. So, we are expecting
-   that everything listed above will be performed in `movie_session` function.
+        ```python
+        cb = CinemaBar()
+        customer = Customer("Bob", "popcorn")
+        cb.sell_product(customer=customer, product=customer.food)
+        # Cinema bar sold popcorn to Bob.
+        ```
+
+    -   `hall.py` - у цьому модулі створіть клас `CinemaHall`,
+        який описує дії під час кіносеансу. Його
+        метод `__init__` приймає та зберігає ЛИШЕ `number` залу в кінотеатрі.
+        Цей клас повинен мати лише один метод `movie_session`, який
+        приймає `movie_name`, `customers` - список клієнтів
+        (екземплярів `Customer`), `cleaning_staff` - прибиральника (екземпляр
+        `Cleaner`). Цей метод друкує про початок фільму, викликає
+        метод клієнтів `watch_movie`, друкує про закінчення фільму,
+        викликає метод прибиральника `clean_hall`. Отже, ми очікуємо,
+        що все перераховане вище буде виконано у функції `movie_session`.
 
 ```python
 hall = CinemaHall(hall_number=5)
@@ -47,49 +46,49 @@ cleaning_staff = Cleaner(name="Anna")
 hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cleaning_staff)
 ```
 
-2. In directory `app` create package `people`. In this package
-   create modules:
-   - `customer.py` - inside this module create `Customer` class,
-   its `__init__` method takes and stores `name`, `food` - food that 
-   customer wants to buy in cinema bar. 
-   This class should have only one method `watch_movie`, this 
-   method takes `movie` and prints what movie customer is watching.
-   
-   ```python
-   bob = Customer(name="Bob", food="popcorn")
-   bob.watch_movie(movie="Madagascar")
-   # Bob is watching "Madagascar".
-   ```
-   
-   - `cinema_staff.py` - inside this module create `Cleaner` class,
-   its `__init__` method takes and stores `name`. 
-   This class should have only one method `clean_hall`, this method
-   takes `hall_number` - number of hall that cleaner have to clean and
-   prints that cleaner is cleaning that hall.
+2.  У каталозі `app` створіть пакет `people`. У цьому пакеті
+    створіть модулі:
+    -   `customer.py` - у цьому модулі створіть клас `Customer`,
+        його метод `__init__` приймає та зберігає `name`, `food` - їжу, яку
+        клієнт хоче купити в кінобарі.
+        Цей клас повинен мати лише один метод `watch_movie`, цей
+        метод приймає `movie` і друкує, який фільм дивиться клієнт.
 
-   ```python
-   anna = Cleaner(name="Anna")
-   anna.clean_hall(hall_number=5)
-   # Cleaner Anna is cleaning hall number 5.
-   ```
+        ```python
+        bob = Customer(name="Bob", food="popcorn")
+        bob.watch_movie(movie="Madagascar")
+        # Bob is watching "Madagascar".
+        ```
 
-In the module `main.py` you have to import all this classes. Classes
-should be imported by absolute path, that starts with 'app.' with 
-keyword 'from'. Write a
-function `cinema_visit` that takes `movie`, `customers` - a list 
-of customers, elements are dicts with 'name' and desired 'food' of a 
-customer, `hall_number` - number of the hall in cinema, 
-`cleaner` - name of the cleaner, that will clean the
-hall after movie session.
+    -   `cinema_staff.py` - у цьому модулі створіть клас `Cleaner`,
+        його метод `__init__` приймає та зберігає `name`.
+        Цей клас повинен мати лише один метод `clean_hall`, цей метод
+        приймає `hall_number` - номер залу, який прибиральник має прибрати, і
+        друкує, що прибиральник прибирає цей зал.
 
-This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
-First, the cinema bar should sell food to customers. To do this, you can use the `CinemaBar`
-class without creating an instance. Then, the cinema hall should schedule a movie session,
-and finally, a cleaner should clean the cinema hall.  We expect each class to work with the provided data,
-accepting parameters in the correct order and having the necessary methods.
-No additional checks or error handling are needed!
+        ```python
+        anna = Cleaner(name="Anna")
+        anna.clean_hall(hall_number=5)
+        # Cleaner Anna is cleaning hall number 5.
+        ```
 
-Example (do not add it to `main.py`): 
+У модулі `main.py` ви повинні імпортувати всі ці класи. Класи
+повинні бути імпортовані за абсолютним шляхом, що починається з `app.` з
+ключовим словом `from`. Напишіть
+функцію `cinema_visit`, яка приймає `movie`, `customers` - список
+клієнтів, елементи якого є словниками з `name` та бажаною `food`
+клієнта, `hall_number` - номер залу в кінотеатрі,
+`cleaner` - ім'я прибиральника, який буде прибирати
+зал після кіносеансу.
+
+Ця функція повинна створювати екземпляри `Customer`, `CinemaHall` та `Cleaner`.
+Спочатку кінобар повинен продати їжу клієнтам. Для цього ви можете використовувати клас `CinemaBar`
+, не створюючи екземпляра. Потім кінозал повинен запланувати кіносеанс,
+і, нарешті, прибиральник повинен прибрати кінозал. Ми очікуємо, що кожен клас буде працювати з наданими даними,
+приймати параметри в правильному порядку та мати необхідні методи.
+Жодних додаткових перевірок чи обробки помилок не потрібно!
+
+Приклад (не додавайте його до `main.py`):
 ```python
 customers = [
     {"name": "Bob", "food": "Coca-cola"},
@@ -108,7 +107,7 @@ cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name,
 # Cleaner Anna is cleaning hall number 5.
 ```
 
-**Important Note**: Each method responsible for performing a task should only print a message using
-the `print()` function. There is no need to return anything or use the `logging` module.
+**Важливе зауваження**: Кожен метод, відповідальний за виконання завдання, повинен лише друкувати повідомлення за допомогою
+функції `print()`. Немає потреби нічого повертати або використовувати модуль `logging`.
 
-Finally, check your code using this [checklist](checklist.md) before pushing your solution.
+Нарешті, перевірте свій код за допомогою цього [контрольного списку](checklist.md) перед тим, як надсилати своє рішення.
