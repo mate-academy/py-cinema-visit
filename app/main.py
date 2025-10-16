@@ -1,4 +1,3 @@
-from typing import List, Dict
 
 # write your imports here
 from app.cinema.bar import CinemaBar
@@ -7,7 +6,13 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+# ПРАВИЛЬНО (розбито на кілька рядків)
+def cinema_visit(
+    customers: list,
+    hall_number: int,
+    cleaner: str,
+    movie: str
+) -> None:
     """
     Simulates a full cinema visit experience.
     """
