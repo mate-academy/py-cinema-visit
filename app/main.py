@@ -5,10 +5,10 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
+        movie: str,
         customers: list,
         hall_number: int,
-        cleaner: str,
-        movie: str
+        cleaner: str
 ) -> None:
     cleaner = Cleaner(name=cleaner)
     cinema_hall = CinemaHall(hall_number)
