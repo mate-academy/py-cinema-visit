@@ -5,11 +5,12 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        movie: str,
         customers: list,
         hall_number: int,
-        cleaner: str
+        cleaner: str,
+        movie: str
 ) -> None:
+
     customer_objects = []
     for customer in customers:
         cust = Customer(name=customer["name"], food=customer["food"])
@@ -23,15 +24,3 @@ def cinema_visit(
         customers=customer_objects,
         cleaning_staff=cleaning_staff
     )
-
-
-customers = [
-    {"name": "Bob", "food": "popcorn"},
-    {"name": "Alex", "food": "Coca-cola"}
-]
-cinema_visit(
-    customers=customers,
-    hall_number=5,
-    cleaner="Anna",
-    movie="Madagascar"
-)
