@@ -1,8 +1,8 @@
+from typing import List, Dict
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
-from typing import List, Dict
 
 
 def cinema_visit(
@@ -11,19 +11,22 @@ def cinema_visit(
     cleaner: str,
     movie: str
 ) -> None:
-    """Simulate a cinema visit with bar, movie session, and cleaning."""
+    """Організовує відвідування кінотеатру клієнтами."""
+
+    # Створюємо об'єкти клієнтів
     customer_objects = [
         Customer(name=c["name"], food=c["food"]) for c in customers
     ]
 
+    # Кожен клієнт купує їжу в кіно-барі
     for customer in customer_objects:
-        CinemaBar.sell_product(
-            product=customer.food,
-            customer=customer
-        )
+        CinemaBar.sell_product(product=customer.food, customer=customer)
 
+    # Створюємо зал і прибиральника
     hall = CinemaHall(number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
+
+    # Проведення сеансу фільму
     hall.movie_session(
         movie_name=movie,
         customers=customer_objects,
