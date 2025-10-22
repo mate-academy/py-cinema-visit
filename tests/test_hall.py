@@ -33,7 +33,7 @@ def test_cinema_hall_movie_session():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        ch.movie_session(movie_name, [customer1, customer2], cleaner)
+        ch.movie_session(mv=movie_name, cus=[customer1, customer2], cl=cleaner)
 
     out = f.getvalue()
     output = '"I\'m Robot" started in hall number 4.\n' \
