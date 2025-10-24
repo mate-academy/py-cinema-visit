@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+import sys
+from types import ModuleType
 from typing import Dict, List
 
 
@@ -58,17 +62,3 @@ def cinema_visit(
         movie_name=movie,
         customers=customer_objs,
         cleaning_staff=Cleaner(name=cleaner),
-    )
-
-
-if __name__ == "__main__":
-    demo_customers = [
-        {"name": "Bob", "food": "Coca-cola"},
-        {"name": "Alex", "food": "popcorn"},
-    ]
-    cinema_visit(
-        customers=demo_customers,
-        hall_number=5,
-        cleaner="Anna",
-        movie="Madagascar",
-    )
