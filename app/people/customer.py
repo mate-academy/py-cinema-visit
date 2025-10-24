@@ -11,4 +11,4 @@ class Customer:
         """
         Imprime o filme que o cliente está assistindo.
         """
-        print(f"{self.name} is watching \"{movie}\".")
+        print(f'{self.name} is watching \"{movie}\".')

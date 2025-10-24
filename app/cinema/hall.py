@@ -20,14 +20,14 @@ class CinemaHall:
         a limpeza do corredor.
         """
         # 1. Início do filme
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'\"{movie_name}\" started in hall number {self.number}.')
 
         # 2. Clientes assistem ao filme
         for customer in customers:
             customer.watch_movie(movie=movie_name)
 
         # 3. Fim do filme
-        print(f"\"{movie_name}\" ended.")
+        print(f'\"{movie_name}\" ended.')
 
         # 4. Limpeza do corredor
         cleaning_staff.clean_hall(hall_number=self.number)
