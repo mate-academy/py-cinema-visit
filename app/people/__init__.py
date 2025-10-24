@@ -1,2 +1,1 @@
-from .customer import Customer
-from .cinema_staff import Cleaner
+# Este arquivo marca o diretório 'people' como um pacote Python.

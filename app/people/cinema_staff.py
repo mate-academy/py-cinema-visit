@@ -1,17 +1,12 @@
 class Cleaner:
     """
-    Descreve um membro da equipe de limpeza do cinema.
+    Descreve o membro da equipe responsável pela limpeza do cinema.
     """
-    def __init__(self, name: str):
-        """
-        Inicializa o limpador com um nome.
-        name é o nome do limpador.
-        """
+    def __init__(self, name: str) -> None:
         self.name = name
 
-    def clean_hall(self, hall_number: int):
+    def clean_hall(self, hall_number: int) -> None:
         """
-        Imprime que o limpador está limpando uma sala específica.
-        hall_number é o número da sala a ser limpa.
+        Imprime que o faxineiro está limpando o corredor especificado.
         """
         print(f"Cleaner {self.name} is cleaning hall number {hall_number}.")

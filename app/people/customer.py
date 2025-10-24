@@ -1,26 +1,14 @@
 class Customer:
     """
-    Descreve um cliente do cinema, incluindo seu nome e a comida desejada.
+    Descreve um cliente do cinema, armazenando seu nome e o item de comida
+    ou bebida que deseja comprar no bar.
     """
-    def __init__(self, name: str, food: str):
-        """
-        Inicializa o cliente com nome e item de comida.
-
-        name: O nome do cliente.
-        food: O item de comida/bebida que o cliente deseja.
-        """
+    def __init__(self, name: str, food: str) -> None:
         self.name = name
         self.food = food
 
-    def watch_movie(self, movie: str):
+    def watch_movie(self, movie: str) -> None:
         """
         Imprime o filme que o cliente está assistindo.
-
-        movie: O nome do filme.
         """
         print(f"{self.name} is watching \"{movie}\".")
-
-# Exemplo de uso
-if __name__ == '__main__':
-    bob = Customer(name="Bob", food="popcorn")
-    bob.watch_movie(movie="Madagascar")
