@@ -12,14 +12,14 @@ class CustomerStats(TypedDict):
 
 
 def cinema_visit(
+        movie: str,
         customers: list[CustomerStats],
         hall_number: int,
-        cleaner: str,
-        movie: str
+        cleaner: str
 ) -> None:
+    cleaner_staff = Cleaner(cleaner)
     customers_list = [Customer(customer["name"], customer["food"])
                       for customer in customers]
-    cleaner_staff = Cleaner(cleaner)
     cinema_hall = CinemaHall(hall_number)
 
     for customer in customers_list:
