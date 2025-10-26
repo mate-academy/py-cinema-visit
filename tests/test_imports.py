@@ -26,7 +26,7 @@ def test_cinema_hall_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.cinema.hall':
+            if isinstance(child, ImportFrom) and child.module == 'app.cinema.hall.py':
                 random_import = child
     assert (
             random_import is not None

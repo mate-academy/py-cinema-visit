@@ -27,7 +27,7 @@ def test_cleaner_clean_hall():
         cleaner.clean_hall(hall_number=hall_number)
 
     out = f.getvalue()
-    output = "Cleaner Anatoly is cleaning hall number 9.\n"
+    output = "Cleaner Anatoly is cleaning hall.py number 9.\n"
     assert out == output, (
         f"'clean_hall' output should equal to {output}, "
         f"when cleaner's 'name' equals to {name} and 'hall_number' equals to {hall_number}"

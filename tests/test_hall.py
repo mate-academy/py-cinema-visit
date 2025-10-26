@@ -36,14 +36,14 @@ def test_cinema_hall_movie_session():
         ch.movie_session(movie_name, [customer1, customer2], cleaner)
 
     out = f.getvalue()
-    output = '"I\'m Robot" started in hall number 4.\n' \
+    output = '"I\'m Robot" started in hall.py number 4.\n' \
              'Max is watching "I\'m Robot".\n' \
              'Alex is watching "I\'m Robot".\n' \
              '"I\'m Robot" ended.\n' \
-             'Cleaner John is cleaning hall number 4.\n'
+             'Cleaner John is cleaning hall.py number 4.\n'
     assert out == output, (
         f"'movie_session' output should equal to {output}, "
-        f"when hall number is {hall}, there are two customers "
+        f"when hall.py number is {hall}, there are two customers "
         f"{customer1_name} and {customer2_name} and cleaner's "
         f"name is {cleaner_name}"
     )
