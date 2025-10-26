@@ -4,8 +4,10 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, number: int,
-                 cleaner: str, movie: str) -> None:
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
     customer_objects = []
     for customer in customers:
         name = customer["name"]
@@ -14,7 +16,7 @@ def cinema_visit(customers: list, number: int,
         CinemaBar.sell_product(product=customer_obj.food,
                                customer=customer_obj)
         customer_objects.append(customer_obj)
-    hall = CinemaHall(number)
+    hall = CinemaHall(hall_number)
     cleaner_obj = Cleaner(cleaner)
     hall.movie_session(movie_name=movie,
                        customers=customer_objects, cleaning_staff=cleaner_obj)
