@@ -27,4 +27,4 @@ class Customer:
         :param movie: The movie to watch.
         :type movie: str
         """
-        print(f"{self.name} is watching \"{movie}\".")
+        print(f'{self.name} is watching "{movie}".')
