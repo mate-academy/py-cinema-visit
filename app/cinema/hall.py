@@ -1,0 +1,24 @@
+from typing import Iterable
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
+
+
+class CinemaHall:
+    def __init__(self, number: int) -> None:
+        self.number = number       # required by the test
+        self.hall_number = number  # used elsewhere
+
+    def movie_session(
+            self,
+            movie_name: str,
+            customers: Iterable[Customer],
+            cleaning_staff: Cleaner
+    ) -> None:
+        print(f"\"{movie_name}\" started in hall number {self.hall_number}.")
+        for customer in customers:
+            if isinstance(customer, dict):
+                print(f'{customer["name"]} is watching "{movie_name}".')
+            else:
+                customer.watch_movie(movie_name)
+        print(f"\"{movie_name}\" ended.")
+        cleaning_staff.clean_hall(self.hall_number)
