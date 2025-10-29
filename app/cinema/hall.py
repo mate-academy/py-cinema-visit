@@ -32,7 +32,8 @@ class CinemaHall:
     def movie_session(self,
                       movie_name: str,
                       customers: List[Customer],
-                      cleaning_staff: Cleaner) -> None:
+                      cleaning_staff: Cleaner
+                      ) -> None:
         """
         Start and manage a movie session in a specific hall.
         The method initiates a movie session with the given name,
