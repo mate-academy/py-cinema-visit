@@ -13,9 +13,10 @@ class CinemaHall:
         self.number = hall_number
 
     def movie_session(
-            self, movie_name: str,
-            customers: List[Customer],
-            cleaning_staff: Cleaner) -> None:
+        self, movie_name: str,
+        customers: List[Customer],
+        cleaning_staff: Cleaner
+    ) -> None:
         """
         Gerencia e registra o início, a exibição, o fim do filme e
         a limpeza do corredor.
