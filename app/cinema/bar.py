@@ -1,17 +1,14 @@
-from ..people.customer import Customer
-
+from app.people.customer import Customer
 
 class CinemaBar:
     """
-    Descreve o funcionamento do cinema bar, usado para registrar
-    a venda de produtos.
+    Descreve o funcionamento do cinema bar.
+    Possui apenas um metodo estático para vender produtos.
     """
+
     @staticmethod
     def sell_product(product: str, customer: Customer) -> None:
         """
-        Metodo estático que registra a venda de um produto para
-        um cliente.
+        Vende um produto ao cliente e exibe qual produto foi vendido e para quem.
         """
-        # A mensagem é formatada conforme o exemplo: Cinema bar sold
-        # [produto] to [cliente.name].
         print(f"Cinema bar sold {product} to {customer.name}.")
