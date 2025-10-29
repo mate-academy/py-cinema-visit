@@ -1,7 +1,7 @@
 import ast
 from _ast import ImportFrom
 
-from . import main
+from app import main
 
 
 def test_cinema_bar_import():
