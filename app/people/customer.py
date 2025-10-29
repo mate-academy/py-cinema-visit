@@ -5,5 +5,4 @@ class Customer:
         self.food = food
 
     def watch_movie(self, movie):
-        # print(f"{self.name} watching {movie}")
-        pass
+        print(f"{self.name} watching {movie}")

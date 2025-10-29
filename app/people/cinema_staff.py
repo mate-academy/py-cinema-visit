@@ -4,4 +4,4 @@ class Cleaner:
 
     @staticmethod
     def clean_hall(self, hall_number: int):
-        print(f"cleaner cleaning {hall_number} hall")
+        print(f"Cleaner {self.name} is cleaning hall number {hall_number}")
