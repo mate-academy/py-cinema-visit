@@ -4,8 +4,12 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, number: int, cleaner: str, movie: str)\
-        -> None:
+def cinema_visit(
+        movie: str,
+        customers: list,
+        number: int,
+        cleaner: str,
+                ) -> None:
     customer_instances = []
 
     for customer_data in customers:
