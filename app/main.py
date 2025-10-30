@@ -18,7 +18,7 @@ def cinema_visit(
     customer_objects = []
     for data in customers:
         customer = Customer(name=data["name"], food=data["food"])
-        CinemaBar().sell_product(customer=customer, product=customer.food)
+        CinemaBar.sell_product(customer=customer, product=customer.food)
         customer_objects.append(customer)
 
     # Start movie session
