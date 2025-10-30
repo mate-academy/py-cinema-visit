@@ -3,5 +3,5 @@ class Customer:
         self.name = name
         self.food = food
 
-    def watch_movie(self) -> None:
-        print(f"{self.name} is watching the movie.")
+    def watch_movie(self, movie: str) -> None:
+        print(f"{self.name} is watching the {movie}.")
