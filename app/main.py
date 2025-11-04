@@ -22,7 +22,6 @@ def cinema_visit(
         )
 
     staff = Cleaner(name=cleaner)
-
     cinema_hall = CinemaHall(number=hall_number)
     cinema_hall.movie_session(
         movie_name=movie,
