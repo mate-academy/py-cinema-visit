@@ -10,13 +10,13 @@ def cinema_visit() -> str:
     It creates a hall, bar, customer and cleaner.
     """
     hall = CinemaHall(capacity=50)
-    bar = CinemaBar()
+    cinema_bar = CinemaBar()
     customer = Customer("Alice")
     cleaner = Cleaner("Bob")
 
     # Use the objects so the tests see interactions
     hall.enter(1)
-    bar.add_item("popcorn", 5.0)
+    cinema_bar.add_item("popcorn", 5.0)
     customer.buy_ticket("ticket-1")
     cleaner.clean(hall)
 
