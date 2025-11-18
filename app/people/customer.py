@@ -6,5 +6,5 @@ class Customer:
         self.name = name
         self.tickets: list = []
 
-    def buy_ticket(self, ticket) -> None:
+    def buy_ticket(self, ticket: str) -> None:
         self.tickets.append(ticket)
