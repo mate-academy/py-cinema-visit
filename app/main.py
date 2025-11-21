@@ -6,7 +6,10 @@ from typing import List
 
 
 def cinema_visit(
-        customers: list, hall_number: int, cleaner: str, movie: str
+        customers: list,
+        hall_number: int,
+        cleaner: str,
+        movie: str
 ) -> None:
     customer_instances: List[Customer] = []
     for customer_data in customers:
