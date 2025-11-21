@@ -20,19 +20,3 @@ class CinemaHall:
         print(f'"{movie_name}" ended.')
 
         cleaning_staff.clean_hall(hall_number=self.number)
-
-
-# if __name__ == '__main__':
-#     customer1 = Customer(name="Bob", food="Coca-cola")
-#     customer2 = Customer(name="Alex", food="popcorn")
-#     customer3 = Customer(name="John", food="chips")
-#
-#     cleaner = Cleaner(name="Anna")
-#
-#     hall = CinemaHall(hall_number=5)
-#
-#     hall.movie_session(
-#         movie_name="Madagascar",
-#         customers=[customer1, customer2, customer3],
-#         cleaning_staff=cleaner
-#     )

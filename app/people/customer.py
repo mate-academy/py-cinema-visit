@@ -7,8 +7,3 @@ class Customer:
         self.movie = movie
 
         print(f'{self.name} is watching "{movie}".')
-
-
-if __name__ == "__main__":
-    bob = Customer("Bob", "popcorn")
-    bob.watch_movie(movie="Madagascar")

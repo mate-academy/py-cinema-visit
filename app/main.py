@@ -25,20 +25,3 @@ def cinema_visit(customers: list,
                        customers=customer_objects,
                        cleaning_staff=cleaner_objects
                        )
-
-
-if __name__ == "__main__":
-    customers = [
-        {"name": "Bob", "food": "Coca-cola"},
-        {"name": "Alex", "food": "popcorn"}
-    ]
-    number = 5
-    cleaner_name = "Anna"
-    movie = "Madagascar"
-
-    cinema_visit(
-        customers=customers,
-        number=number,
-        cleaner=cleaner_name,
-        movie=movie
-    )
