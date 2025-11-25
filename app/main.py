@@ -1,4 +1,3 @@
-# write your imports here
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
