@@ -1,6 +1,7 @@
-class Cleaner:
-    def __init__(self, name: str) -> None:
+class Customer:
+    def __init__(self, name: str, food: str) -> None:
         self.name = name
+        self.food = food
 
-    def clean_hall(self, hall_number: int) -> None:
-        print(f"{self.name} is cleaning hall {hall_number}.")
+    def watch_movie(self, movie: str) -> None:
+        print(f"{self.name} is watching \"{movie}\".")
