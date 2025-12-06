@@ -16,5 +16,5 @@ def cinema_visit(customers: list,
         obj = Customer(name=customer_dict["name"], food=customer_dict["food"])
         customers_list.append(obj)
     for customer in customers_list:
-        CinemaBar.sell_product(customer, customer.food)
+        CinemaBar.sell_product(customer=customer, product=customer.food)
     hall.movie_session(movie, customers_list, cleaning_staff)
