@@ -18,7 +18,7 @@ def cinema_visit(
     cinema_bar = CinemaBar()
 
     for cust_data in customers:
-        customer = Customer(name=cust_data['name'], food=cust_data['food'])
+        customer = Customer(name=cust_data["name"], food=cust_data["food"])
         customer_instances.append(customer)
         cinema_bar.sell_product(customer=customer, product=customer.food)
 
