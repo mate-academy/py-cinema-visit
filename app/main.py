@@ -5,7 +5,8 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(movie: str,
-                 customers: list, hall_number: int, cleaner: str) -> None:
+                 customers: list,
+                 hall_number: int, cleaner: str) -> None:
 
     customer_instances = []
     for customer_data in movie:
