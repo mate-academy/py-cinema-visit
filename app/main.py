@@ -8,7 +8,7 @@ from app.cinema.bar import CinemaBar
 
 def cinema_visit(
     customers: List[Dict[str, str]],
-    hall_number: int,
+    number: int,
     cleaner: str,
     movie: str
 ) -> None:
@@ -24,7 +24,7 @@ def cinema_visit(
         CinemaBar.sell_product(customer=customer, product=customer.food)
 
     cleaner_instance = Cleaner(name=cleaner)
-    hall_instance = CinemaHall(number=hall_number)
+    hall_instance = CinemaHall(number=number)
 
     hall_instance.movie_session(
         movie_name=movie,
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     cinema_visit(
         customers=customers_data,
-        hall_number=hall_num,
+        number=hall_num,
         cleaner=cleaner_name,
         movie=movie,
     )
