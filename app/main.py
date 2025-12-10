@@ -13,4 +13,5 @@ def cinema_visit(customers: list, hall_number: int,
     for i in customers_instances:
         CinemaBar.sell_product(product=i.food, customer=i)
     cinema_hall_instance.movie_session(movie_name=movie,
-                                       customers=customers_instances, cleaning_staff=cleaner_instances)
+                                       customers=customers_instances,
+                                       cleaning_staff=cleaner_instances)
