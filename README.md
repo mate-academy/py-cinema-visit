@@ -70,7 +70,7 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
    ```python
    anna = Cleaner(name="Anna")
    anna.clean_hall(hall_number=5)
-   # Cleaner Anna is cleaning hall number 5.
+   # Cleaner Anna is cleaning hall.py number 5.
    ```
 
 In the module `main.py` you have to import all this classes. Classes
@@ -101,11 +101,11 @@ movie = "Madagascar"
 cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name, movie=movie)
 # Cinema bar sold Coca-cola to Bob.
 # Cinema bar sold popcorn to Alex.
-# "Madagascar" started in hall number 5.
+# "Madagascar" started in hall.py number 5.
 # Bob is watching "Madagascar".
 # Alex is watching "Madagascar".
 # "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
+# Cleaner Anna is cleaning hall.py number 5.
 ```
 
 **Important Note**: Each method responsible for performing a task should only print a message using
