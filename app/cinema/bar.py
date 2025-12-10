@@ -1,4 +1,5 @@
-from  typing import Any
+from typing import Any
+
 
 class CinemaBar:
     @staticmethod
