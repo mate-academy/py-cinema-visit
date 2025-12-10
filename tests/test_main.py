@@ -59,11 +59,11 @@ from app.main import cinema_visit
         )
     ]
 )
-def test_cinema_visit(customers, hall_number, cleaner, movie, output):
+def test_cinema_visit(movie, customers, hall_number, cleaner, output):
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cinema_visit(customers, hall_number, cleaner, movie)
+        cinema_visit(movie, customers, hall_number, cleaner)
 
     out = f.getvalue()
 
