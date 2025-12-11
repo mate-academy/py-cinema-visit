@@ -5,17 +5,12 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    bar = CinemaBar()
-    hall = CinemaHall(hall_number)
+    customer_objects = [Customer(name=c['name'], food=c['food']) for c in customers]
 
-    for customer in customers:
-        customer.buy_ticket(movie)
-        bar.sell_popcorn(customer)
+    for cust in customer_objects:
+        CinemaBar.sell_product(product=cust.food, customer=cust)
 
-    for customer in customers:
-        hall.seat_customer(customer)
+    cleaner_obj = Cleaner(name=cleaner)
+    hall = CinemaHall(hall_number=hall_number)
 
-    hall.start_movie(movie)
-
-    cleaner_obj = Cleaner(cleaner)
-    cleaner_obj.clean_hall(hall_number)
+    hall.movie_session(movie_name=movie, customers=customer_objects, cleaning_staff=cleaner_obj)
