@@ -25,7 +25,7 @@ def cinema_visit(
         )
 
     cleaner_obj = Cleaner(name=cleaner)
-    hall = CinemaHall(hall_number=hall_number)
+    hall = CinemaHall(number=hall_number)
 
     hall.movie_session(
         movie_name=movie,
