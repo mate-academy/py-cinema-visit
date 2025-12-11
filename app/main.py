@@ -9,10 +9,12 @@ def cinema_visit(customers, hall_number, cleaner, movie):
     hall = CinemaHall(number=hall_number)
     customer_instances = []
 
-    for c in customers:
-        cust = Customer(name=c["name"], food=c["food"])
-        customer_instances.append(cust)
-        CinemaBar.sell_product(product=cust.food, customer=cust)
+    for customer_data in customers:
+        customer_obj = Customer(name=customer_data["name"],
+                                food=customer_data["food"])
+        customer_instances.append(customer_obj)
+        CinemaBar.sell_product(
+            product=customer_obj.food, customer=customer_obj)
 
     hall.movie_session(
         movie_name=movie,
