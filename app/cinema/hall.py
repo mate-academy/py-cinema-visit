@@ -8,7 +8,7 @@ class CinemaHall:
     def movie_session(self, movie_name: str, customers: list,
                       cleaning_staff: object) -> None:
         for customer in customers:
-            CinemaBar.sell_product(customer.name, customer.food)
+            CinemaBar.sell_product(customer, customer.food)
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
