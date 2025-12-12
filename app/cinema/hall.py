@@ -1,4 +1,4 @@
-from bar import CinemaBar
+from app.cinema.bar import CinemaBar
 
 
 class CinemaHall:
