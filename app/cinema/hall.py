@@ -5,7 +5,7 @@ class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str, customers: list, 
+    def movie_session(self, movie_name: str, customers: list,
                       cleaning_staff: object) -> None:
         for customer in customers:
             CinemaBar.sell_product(customer.name, customer.food)
