@@ -10,7 +10,8 @@ class CinemaHall:
         for customer in customers:
             CinemaBar.sell_product(customer, customer.food)
 
-        movie_start = movie_name + " started in hall number " + str(self.number) + "."
+        movie_start = movie_name + " started in hall number "
+        + str(self.number) + "."
         print(movie_start)
 
         for customer in customers:
