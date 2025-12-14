@@ -1,4 +1,3 @@
-import pytest
 import io
 
 from contextlib import redirect_stdout
@@ -6,7 +5,7 @@ from contextlib import redirect_stdout
 from app.people.cinema_staff import Cleaner
 
 
-def test_cleaner_constructor():
+def test_cleaner_constructor() -> None:
     cleaner = Cleaner(name="James")
     assert hasattr(cleaner, "name"), (
         "Cleaner instance should have 'name' attribute"
@@ -17,7 +16,7 @@ def test_cleaner_constructor():
     )
 
 
-def test_cleaner_clean_hall():
+def test_cleaner_clean_hall() -> None:
     name = "Anatoly"
     cleaner = Cleaner(name=name)
     hall_number = 9
