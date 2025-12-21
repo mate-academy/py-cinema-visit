@@ -4,8 +4,12 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, number: int, cleaner: str, movie: str) \
-        -> None:
+def cinema_visit(
+        customers: list,
+        number: int,
+        cleaner: str,
+        movie: str
+) -> None:
     # 1. Create instances of Customer
     customer_instances = []
     for customer_data in customers:
