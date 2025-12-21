@@ -6,7 +6,10 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(customers: List[Dict[str, str]],
-                 hall_number: int, cleaner: str, movie: str) -> None:
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str
+                 ) -> None:
     customer_instances = []
     for example in customers:
         customer = Customer(example["name"], example["food"])
