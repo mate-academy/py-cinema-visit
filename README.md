@@ -15,13 +15,12 @@ package create modules:
    that takes `product` - name of the product that customer wants
    and `customer` - `Customer` instance, that means customer.
    The `sell_product` method sells a product to the customer and displays which product was sold and to whom.
-   
-   
+
    ```python
    cb = CinemaBar()
-   customer = Customer("Bob", "popcorn")
-   cb.sell_product(customer=customer, product=customer.food)
-   # Cinema bar sold popcorn to Bob.
+customer = Customer("Bob", "popcorn")
+cb.sell_product(cur_customer=, food=)
+# Cinema bar sold popcorn to Bob.
    ```
 
    - `hall.py` - inside this module create `CinemaHall`
