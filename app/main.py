@@ -21,7 +21,7 @@ def cinema_visit(
 
     # Vende produtos no cinema bar
     for customer in customer_objects:
-        CinemaBar.sell_product(customer=customer, product=customer.food)
+        CinemaBar.sell_product(product=customer.food, customer=customer)
 
     # Cria instância de CinemaHall
     hall = CinemaHall(hall_number=hall_number)
