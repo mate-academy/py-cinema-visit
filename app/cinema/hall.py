@@ -7,12 +7,12 @@ class CinemaHall:
 
     It coordinates the start of the movie, customer interactions,
     and the subsequent cleaning of the hall.
+
+    Args:
+        number (int): The hall number.
     """
 
     def __init__(self, number: int) -> None:
-        """
-        Establish the hall number.
-        """
         self.number = number
 
     def movie_session(self, movie_name: str,
@@ -33,11 +33,11 @@ class CinemaHall:
             cleaning_staff (Cleaner): The staff member
                                         responsible for cleaning.
         """
-        print(f'"{movie_name}" movie session started')
+        print(f'"{movie_name}" movie session started.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print(f'"{movie_name}" movie session ended')
+        print(f'"{movie_name}" movie session ended.')
 
         cleaning_staff.clean_hall(self.number)
