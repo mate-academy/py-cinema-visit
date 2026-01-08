@@ -34,11 +34,11 @@ class CinemaHall:
             cleaning_staff (Cleaner): The staff member
                                         responsible for cleaning.
         """
-        print(f'{movie_name} movie session started.')
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print(f'{movie_name} movie session ended.')
+        print(f'"{movie_name}" ended.')
 
         cleaning_staff.clean_hall(self.number)
