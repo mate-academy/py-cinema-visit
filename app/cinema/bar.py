@@ -20,4 +20,4 @@ class CinemaBar:
         Print:
             The transaction between the cinema and the customer.
         """
-        print(f"Cinema bar sold {product} to {customer}.")
+        print(f"Cinema bar sold {product} to {customer.name}.")

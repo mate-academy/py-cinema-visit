@@ -14,9 +14,6 @@ class Customer:
         self.name = name
         self.food = food
 
-    def __str__(self) -> str:
-        return self.name
-
     def watch_movie(self, movie: str) -> None:
         """
         Shows which movie the customer is watching.

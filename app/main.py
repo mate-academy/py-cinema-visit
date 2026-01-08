@@ -4,7 +4,10 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
     """
     It handles all actions performed in the cinema, creating instances and
     calling imported functions and shows it in chronological order.
