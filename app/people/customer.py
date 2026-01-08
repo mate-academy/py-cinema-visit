@@ -24,4 +24,4 @@ class Customer:
         Args:
             movie (str): The film chosen by the customer.
         """
-        print(f'{self.name} is watchin "{movie}".')
+        print(f'{self.name} is watching "{movie}".')
