@@ -1,6 +1,5 @@
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
-from typing import Any
 
 
 class CinemaHall:
@@ -9,9 +8,9 @@ class CinemaHall:
 
     def movie_session(self, movie_name: str,
                       customers: list[Customer],
-                      cleaning_staff: Cleaner) -> Any:
+                      cleaning_staff: Cleaner) -> None:
         print(f"{movie_name} started in hall number {self.hall_number} ")
         for customer in customers:
             customer.watch_movie(movie_name)
         print(f"{movie_name} ended.")
-        Cleaner.clean_hall(cleaning_staff, self.hall_number)
+        cleaning_staff.clean_hall(self.hall_number)
