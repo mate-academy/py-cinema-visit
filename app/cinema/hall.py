@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class CinemaHall:
     def __init__(self, hall_number: int) -> None:
         self.hall_number = hall_number
@@ -14,3 +15,8 @@ class CinemaHall:
             customer.watch_movie(movie_name)
         print(f'\"{movie_name}\" ended.')
         cleaning_staff.clean_hall(self.hall_number)
+
+
+if __name__ == "__main__":
+    from app.people.customer import Customer
+    from app.people.cinema_staff import Cleaner
