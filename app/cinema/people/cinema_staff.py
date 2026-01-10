@@ -3,4 +3,4 @@ class Cleaner:
         self.name = name
 
     def clean_hall(self, hall_name: "CinemaHall.hall_number") -> None:
-        print(f"# Cleaner {self.name} is cleaning hall number {hall_name}.")
+        print(f"Cleaner {self.name} is cleaning hall number {hall_name}.")
