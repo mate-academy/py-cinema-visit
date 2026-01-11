@@ -1,7 +1,7 @@
-from bar import CinemaBar
-from hall import CinemaHall
-from people.customers import Customer
-from people.cinema_staff import Cleaner
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
@@ -18,5 +18,5 @@ def cinema_visit(
     cinema_hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     for customer in customers:
-        CinemaBar.sell_product(customer.food, customer)
+        CinemaBar.sell_product(customer, customer.food)
     cinema_hall.movie_session(movie, customers, cleaner)
