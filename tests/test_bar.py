@@ -1,10 +1,9 @@
-import pytest
 import io
 
 from contextlib import redirect_stdout
 
 from app.cinema.bar import CinemaBar
-from app.people.customer import Customer
+from app.people import Customer
 
 
 def test_cinema_bar_sell_product():
