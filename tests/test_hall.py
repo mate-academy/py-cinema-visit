@@ -2,7 +2,7 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.cinema.hall import CinemaHall
+from app.cinema1.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
@@ -36,6 +36,7 @@ def test_cinema_hall_movie_session():
         ch.movie_session(movie_name, [customer1, customer2], cleaner)
 
     out = f.getvalue()
+    print(out)
     output = '"I\'m Robot" started in hall number 4.\n' \
              'Max is watching "I\'m Robot".\n' \
              'Alex is watching "I\'m Robot".\n' \

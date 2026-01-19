@@ -10,7 +10,7 @@ def test_cinema_bar_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.cinema.bar':
+            if isinstance(child, ImportFrom) and child.module == 'app.cinema1.bar':
                 random_import = child
     assert (
             random_import is not None
@@ -26,7 +26,7 @@ def test_cinema_hall_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.cinema.hall':
+            if isinstance(child, ImportFrom) and child.module == 'app.cinema1.hall':
                 random_import = child
     assert (
             random_import is not None
