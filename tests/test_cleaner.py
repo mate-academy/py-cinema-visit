@@ -24,7 +24,7 @@ def test_cleaner_clean_hall():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cleaner.clean_hall(hall_number=hall_number)
+        cleaner.clean_hall(number=hall_number)
 
     out = f.getvalue()
     output = "Cleaner Anatoly is cleaning hall number 9.\n"
