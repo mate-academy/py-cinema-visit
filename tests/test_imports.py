@@ -65,4 +65,4 @@ def test_customer_import():
     ), "Class 'Customer' should be imported using 'from'"
     assert (
             random_import.names[0].name == "Customer"
-    ), "Class 'Customer' should be imported from 'customer' module"
+    ), "Class 'Customer' should be imported from 'people' module"
