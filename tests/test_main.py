@@ -3,7 +3,7 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.main import cinema_visit
+from main import cinema_visit
 
 @pytest.mark.parametrize(
     "customers,hall_number,cleaner,movie,output",
@@ -59,11 +59,11 @@ from app.main import cinema_visit
         )
     ]
 )
-def test_cinema_visit(customers, hall_number, cleaner, movie, output):
+def test_cinema_visit( cleaner, customers, hall_number,movie, output):
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cinema_visit(customers, hall_number, cleaner, movie)
+        cinema_visit(movie, customers, hall_number, cleaner, )
 
     out = f.getvalue()
 
