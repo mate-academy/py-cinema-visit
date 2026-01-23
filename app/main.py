@@ -3,11 +3,12 @@ from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 from people.customer import Customer
 
+
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
     customer_list = list()
-    for c in customers:
-        customer = Customer(c["name"], c["food"])
+    for cust in customers:
+        customer = Customer(cust["name"], cust["food"])
         customer_list.append(customer)
         CinemaBar.sell_product(customer.food, customer)
     hall = CinemaHall(hall_number)
