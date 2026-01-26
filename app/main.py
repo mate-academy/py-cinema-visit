@@ -21,7 +21,6 @@ def cinema_visit(
         hall_number = old_hall_number
         cleaner = old_cleaner
 
-
     customers_in = customers
     created_customers = []
     for customer_in in customers_in:
