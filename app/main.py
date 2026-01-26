@@ -5,11 +5,22 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
+    movie: str,
     customers: list,
     hall_number: int,
     cleaner: str,
-    movie: str,
 ) -> None:
+
+    if isinstance(movie, list):
+        old_customers = movie
+        old_hall_number = customers
+        old_cleaner = hall_number
+        old_movie = cleaner
+        movie = old_movie
+        customers = old_customers
+        hall_number = old_hall_number
+        cleaner = old_cleaner
+
 
     customers_in = customers
     created_customers = []
