@@ -9,7 +9,7 @@ def long_function_name(
         var_two,
         var_three,
         var_four
-) -> None:
+) -> None: 
 ```
 
 **Bad example:**
