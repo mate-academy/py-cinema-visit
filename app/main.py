@@ -33,4 +33,3 @@ def cinema_visit(
         cleaning_staff=cleaner_instance,
     )
 
-    )
