@@ -1,7 +1,7 @@
-from cinema.app.bar import CinemaBar
-from cinema.app.hall import CinemaHall
-from cinema.people.customer import Customer
-from cinema.people.cinema_staff import Cleaner
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
@@ -10,7 +10,6 @@ def cinema_visit(
     hall_number: int,
     cleaner: str,
 ) -> None:
-    # NÃO crie instância de CinemaBar - use o método estático diretamente
     cinema_hall = CinemaHall(hall_number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
 
@@ -22,7 +21,7 @@ def cinema_visit(
             food=customer_data["food"],
         )
         customer_instances.append(customer)
-        # Chame o método estático diretamente da classe CinemaBar
+
         CinemaBar.sell_product(
             product=customer.food,
             customer=customer,
@@ -32,4 +31,6 @@ def cinema_visit(
         movie_name=movie,
         customers=customer_instances,
         cleaning_staff=cleaner_instance,
+    )
+
     )
