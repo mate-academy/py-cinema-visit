@@ -1,4 +1,5 @@
 
+
 class CinemaBar:
   
   @staticmethod
