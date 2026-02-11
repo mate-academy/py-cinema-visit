@@ -6,6 +6,6 @@ class CinemaBar:
     @staticmethod
     def sell_product(product: str, customer: Customer | str) -> None:
         if isinstance(customer, Customer):
-            print(f"Cinema bar sold {product} to {customer.name}")
+            print(f"Cinema bar sold {product} to {customer.name}.")
         else:
-            print(f"Cinema bar sold {product} to {customer}")
+            print(f"Cinema bar sold {product} to {customer}.")
