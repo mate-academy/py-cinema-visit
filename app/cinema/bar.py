@@ -9,4 +9,3 @@ class CinemaBar:
             print(f"Cinema bar sold {product} to {customer.name}")
         else:
             print(f"Cinema bar sold {product} to {customer}")
-
