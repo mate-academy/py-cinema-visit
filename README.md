@@ -25,7 +25,8 @@ package create modules:
    ```
 
    - `hall.py` - inside this module create `CinemaHall`
-   class that describes actions during the movie session. Its
+   class that describes 
+   - actions during the movie session. Its
    `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
    This class should have only one method `movie_session`, that
    takes `movie_name`, `customers` - list of a customers
