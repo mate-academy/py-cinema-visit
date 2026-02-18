@@ -2,8 +2,9 @@ from app.people.customer import Customer
 
 
 class CinemaBar:
+
+    @staticmethod
     def sell_product(
-        self,
         customer: Customer,
         product: str
     ) -> None:
