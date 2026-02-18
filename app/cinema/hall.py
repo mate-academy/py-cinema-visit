@@ -1,29 +1,23 @@
-from typing import Dict, List
+from typing import List
 
-from app.cinema.bar import CinemaBar
-from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(
-    movie: str,
-    customers: List[Dict[str, str]],
-    hall_number: int,
-    cleaner: str,
-) -> None:
-    customer_objects: List[Customer] = [
-        Customer(c["name"], c["food"]) for c in customers
-    ]
+class CinemaHall:
+    def __init__(self, number: int) -> None:
+        self.number: int = number
 
-    for customer in customer_objects:
-        CinemaBar.sell_product(product=customer.food, customer=customer)
+    def movie_session(
+        self,
+        movie_name: str,
+        customers: List[Customer],
+        cleaning_staff: Cleaner,
+    ) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
-    hall: CinemaHall = CinemaHall(hall_number)
-    cleaning_staff: Cleaner = Cleaner(cleaner)
+        for customer in customers:
+            customer.watch_movie(movie_name)
 
-    hall.movie_session(
-        movie_name=movie,
-        customers=customer_objects,
-        cleaning_staff=cleaning_staff,
-    )
+        print(f'"{movie_name}" ended.')
+        cleaning_staff.clean_hall(self.number)
