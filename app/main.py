@@ -1,6 +1,7 @@
-# write your imports here
+from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    # write you code here
-    pass
+class CinemaBar:
+    @staticmethod
+    def sell_product(product: str, customer: Customer) -> None:
+        print(f"Cinema bar sold {product} to {customer.name}.")
