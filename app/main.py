@@ -18,3 +18,4 @@ def cinema_visit(
     hall = CinemaHall(hall_number)
     clean = Cleaner(cleaner)
     hall.movie_session(movie, cust_list, clean)
+
