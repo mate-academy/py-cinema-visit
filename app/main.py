@@ -1,6 +1,3 @@
-# write your imports here
-
-
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    # write you code here
-    pass
+  hall = CinemaHall(number=hall_number)
+    hall.movie_session(movie_name=movie, customers=customer_instances,
+                       cleaning_staff=cleaning_staff)
