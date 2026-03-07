@@ -16,11 +16,12 @@ def cinema_visit(
         new_customer = Customer(name=c_data["name"], food=c_data["food"])
         customer_instances.append(new_customer)
         CinemaBar.sell_product(
-            product=new_customer.food, customer=new_customer
+            product=new_customer.food,
+            customer=new_customer
         )
 
     cleaning_staff = Cleaner(name=cleaner)
-    hall = CinemaHall(hall_number=hall_number)
+    hall = CinemaHall(number=hall_number)
 
     hall.movie_session(
         movie_name=movie,
