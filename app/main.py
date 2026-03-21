@@ -5,7 +5,9 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list[dict[str, str]],
-                 hall_number: int, cleaner: str, movie: str) -> None:
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
     customer_list = [Customer(
         customer["name"], customer["food"]
     ) for customer in customers]
