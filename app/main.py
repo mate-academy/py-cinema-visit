@@ -11,7 +11,6 @@ def cinema_visit(
         movie: str
 ) -> None:
     customers_obj_list = []
-    # print(customers)
 
     # classes initialization
     if customers:
@@ -24,8 +23,7 @@ def cinema_visit(
     # calling methods
     for customer_obj in customers_obj_list:
         CinemaBar.sell_product(customer_obj, customer_obj.food)
-    CinemaHall.movie_session(
-        cinema_hall,
+    cinema_hall.movie_session(
         movie=movie,
         customers=customers_obj_list,
         cleaning_staff=cleaner
