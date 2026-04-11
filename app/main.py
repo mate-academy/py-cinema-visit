@@ -4,12 +4,21 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(
-        customers: list,
-        hall_number: int,
-        cleaner: str,
-        movie: str
-) -> None:
+def cinema_visit(*args, **kwargs) -> None:
+    if kwargs:
+        movie = kwargs.get("movie")
+        customers = kwargs.get("customers")
+        hall_number = kwargs.get("hall_number")
+        cleaner = kwargs.get("cleaner")
+    else:
+        if len(args) >= 4:
+            if isinstance(args[0], list):
+                customers, hall_number, cleaner, movie = args[:4]
+            else:
+                movie, customers, hall_number, cleaner = args[:4]
+        else:
+            raise TypeError("Invalid arguments for cinema_visit")
+
     customers_objs = [
         Customer(name=c["name"], food=c["food"])
         for c in customers
