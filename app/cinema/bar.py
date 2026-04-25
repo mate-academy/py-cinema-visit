@@ -1,4 +1,4 @@
-import people.customer as customer_md
+import app.people.customer as customer_md
 
 
 class CinemaBar:
