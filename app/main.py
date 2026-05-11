@@ -5,15 +5,15 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-    movie: str,
     customers: list[dict],
     hall_number: int,
     cleaner: str,
+    movie: str,
 ) -> None:
     customer_instances = [
         Customer(name=c["name"], food=c["food"]) for c in customers
     ]
-    hall = CinemaHall(hall_number=hall_number)
+    hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
 
     for customer in customer_instances:
