@@ -9,9 +9,7 @@ from app.people.customer import Customer
 
 def test_cinema_hall_constructor():
     ch = CinemaHall(number=6)
-    assert hasattr(ch, "number"), (
-        "CinemaHall instance should have 'number' attribute"
-    )
+    assert hasattr(ch, "number"), "CinemaHall instance should have 'number' attribute"
     assert ch.number == 6, (
         f"Value of attribute 'number' should equal to 6 when "
         f"instance is created by 'CinemaHall(number=6)'"
@@ -36,11 +34,13 @@ def test_cinema_hall_movie_session():
         ch.movie_session(movie_name, [customer1, customer2], cleaner)
 
     out = f.getvalue()
-    output = '"I\'m Robot" started in hall number 4.\n' \
-             'Max is watching "I\'m Robot".\n' \
-             'Alex is watching "I\'m Robot".\n' \
-             '"I\'m Robot" ended.\n' \
-             'Cleaner John is cleaning hall number 4.\n'
+    output = (
+        '"I\'m Robot" started in hall number 4.\n'
+        'Max is watching "I\'m Robot".\n'
+        'Alex is watching "I\'m Robot".\n'
+        '"I\'m Robot" ended.\n'
+        "Cleaner John is cleaning hall number 4.\n"
+    )
     assert out == output, (
         f"'movie_session' output should equal to {output}, "
         f"when hall number is {hall}, there are two customers "
