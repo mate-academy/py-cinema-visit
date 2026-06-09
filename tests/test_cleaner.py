@@ -32,3 +32,4 @@ def test_cleaner_clean_hall():
         f"'clean_hall' output should equal to {output}, "
         f"when cleaner's 'name' equals to {name} and 'hall_number' equals to {hall_number}"
     )
+    

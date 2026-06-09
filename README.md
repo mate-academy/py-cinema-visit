@@ -2,7 +2,7 @@
 
 - Read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
 
-You have opened your own cinema. To have a better idea 
+You have opened your own cinema. To have a better idea  
 of what's going on in the cinema 
 you decided to keep a record of events in the cinema.
 For this purpose you have to create such modules:
@@ -15,16 +15,16 @@ package create modules:
    that takes `product` - name of the product that customer wants
    and `customer` - `Customer` instance, that means customer.
    The `sell_product` method sells a product to the customer and displays which product was sold and to whom.
-   
-   
-   ```python
+
+   а
+```python
    cb = CinemaBar()
    customer = Customer("Bob", "popcorn")
    cb.sell_product(customer=customer, product=customer.food)
    # Cinema bar sold popcorn to Bob.
    ```
 
-   - `hall.py` - inside this module create `CinemaHall`
+   -`hall.py` - inside this module create `CinemaHall`
    class that describes actions during the movie session. Its
    `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
    This class should have only one method `movie_session`, that
