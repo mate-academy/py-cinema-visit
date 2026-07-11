@@ -1,6 +1,7 @@
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
+
 class CinemaHall:
     """
     Describes actions during the movie session
@@ -23,11 +24,11 @@ class CinemaHall:
         :return:
         """
 
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print(f"\"{movie_name}\" ended.")
+        print(f'"{movie_name}" ended.')
 
         cleaning_staff.clean_hall(self.number)
