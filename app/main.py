@@ -5,10 +5,10 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-        movie: str,
         customers: list,
         hall_number: int,
         cleaner: str,
+        movie: str,
 ) -> None:
     # 1. Create instances of Customer
     customer_instances = [
