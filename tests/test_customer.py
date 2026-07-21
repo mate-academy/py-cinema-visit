@@ -4,7 +4,6 @@ from contextlib import redirect_stdout
 
 from app.people.customer import Customer
 
-
 def test_customer_constructor():
     customer = Customer(name="Bob", food="popcorn")
     assert hasattr(customer, "name"), (
