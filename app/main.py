@@ -22,8 +22,8 @@ def cinema_visit(
         customer_list.append(current_customer)
 
         CinemaBar.sell_product(
-            current_customer.food,
-            current_customer,
+            customer=customer,
+            product=customer.food,
         )
 
     hall = CinemaHall(hall_number)
