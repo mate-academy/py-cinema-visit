@@ -5,7 +5,6 @@ from app.people.cinema_staff import Cleaner
 class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
-        self.seats = []
 
     def movie_session(
             self,
