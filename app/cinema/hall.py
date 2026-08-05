@@ -1,5 +1,5 @@
-from people.customer import Customer
-from people.cinema_staff import Cleaner
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
