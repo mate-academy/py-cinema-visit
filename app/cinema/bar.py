@@ -1,4 +1,4 @@
-from app.people.customer import Customer
+from ..people.customer import Customer
 
 
 class CinemaBar:
