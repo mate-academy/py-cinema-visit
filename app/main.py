@@ -5,11 +5,12 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-    movie: str,
     customers: list,
     hall_number: int,
-    cleaner: str
+    cleaner: str,
+    movie: str
 ) -> None:
+    # Твій подальший код...
     customer_instances = []
     for cust_dict in customers:
         new_cus = Customer(
