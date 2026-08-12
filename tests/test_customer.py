@@ -2,7 +2,7 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.people.customer import Customer
+from app import Customer
 
 
 def test_customer_constructor():
