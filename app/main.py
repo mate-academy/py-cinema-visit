@@ -10,7 +10,6 @@ def cinema_visit(
     cleaner: str,
     movie: str
 ) -> None:
-    # Твій подальший код...
     customer_instances = []
     for cust_dict in customers:
         new_cus = Customer(
