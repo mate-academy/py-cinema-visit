@@ -1,6 +1,5 @@
-import pytest
-import io
 
+import io
 from contextlib import redirect_stdout
 
 from app.cinema.bar import CinemaBar
