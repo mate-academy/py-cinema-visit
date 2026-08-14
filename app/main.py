@@ -13,7 +13,7 @@ def cinema_visit(
     customer_instances = [
         Customer(name=c["name"], food=c["food"]) for c in customers
     ]
-    hall_instance = CinemaHall(number=hall_number)
+    hall_instance = CinemaHall(hall_number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
 
     for customer in customer_instances:
