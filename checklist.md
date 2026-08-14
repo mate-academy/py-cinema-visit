@@ -21,6 +21,7 @@ def long_function_name(var_one, var_two,
 2. Only use absolute imports.
 
 **Good example:**
+
 ```python
 from app.module import Component
 ```
