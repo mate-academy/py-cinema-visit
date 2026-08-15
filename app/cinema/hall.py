@@ -3,13 +3,8 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(
-        self,
-        hall_number: int | None = None,
-        number: int | None = None,
-    ) -> None:
-        self.number = number if number is not None else hall_number
-        self.hall_number = self.number
+    def __init__(self, hall_number: int) -> None:
+        self.hall_number = hall_number
 
     def movie_session(
         self,
@@ -17,8 +12,8 @@ class CinemaHall:
         customers: list[Customer],
         cleaning_staff: Cleaner,
     ) -> None:
-        print(f'"{movie_name}" started in hall number {self.number}.')
+        print(f"\"{movie_name}\" started in hall number {self.hall_number}.")
         for customer in customers:
             customer.watch_movie(movie=movie_name)
-        print(f'"{movie_name}" ended.')
-        cleaning_staff.clean_hall(hall_number=self.number)
+        print(f"\"{movie_name}\" ended.")
+        cleaning_staff.clean_hall(hall_number=self.hall_number)
