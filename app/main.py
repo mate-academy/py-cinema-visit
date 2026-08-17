@@ -19,11 +19,9 @@ def cinema_visit(
         )
 
     hall = CinemaHall(hall_number)
-    updated_cust = []
     cleaner = Cleaner(cleaner)
-    for customer in customers:
-        new_customer = Customer(customer["name"], customer["food"])
-        updated_cust.append(new_customer)
+    updated_cust = [Customer(customer["name"], customer["food"])
+                    for customer in customers]
     hall.movie_session(
         movie_name=movie,
         customers=updated_cust,
