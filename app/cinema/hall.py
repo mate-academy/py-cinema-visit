@@ -14,9 +14,6 @@ class CinemaHall:
     ) -> None:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
         for customer in customers:
-            if isinstance(customer, dict):
-                res = list(customer.values())
-                customer = Customer(name=res[0], food=res[1])
             customer.watch_movie(movie_name)
 
         print(f'\"{movie_name}\" ended.')
