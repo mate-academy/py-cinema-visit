@@ -15,7 +15,7 @@ def cinema_visit(
         for c in customers
     ]
     cleaning_staff = Cleaner(name=cleaner)
-    cinema_hall = CinemaHall(hall_number=hall_number)
+    cinema_hall = CinemaHall(number=hall_number)
 
     for customer in customer_instances:
         CinemaBar.sell_product(product=customer.food, customer=customer)
