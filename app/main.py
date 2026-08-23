@@ -5,7 +5,7 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list,
-                 number: int,
+                 hall_number: int,
                  cleaner: str,
                  movie: str
                  ) -> None:
@@ -17,7 +17,7 @@ def cinema_visit(customers: list,
         new_customer_list.append(customer_obj)
 
     # CinemaHall instance
-    hall_obj = CinemaHall(number)
+    hall_obj = CinemaHall(hall_number)
 
     # Cleaner instance
     cleaner_obj = Cleaner(cleaner)
