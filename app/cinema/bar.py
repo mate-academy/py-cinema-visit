@@ -1,5 +1,5 @@
 from __future__ import annotations
-from people.customer import Customer
+from app.people.customer import Customer
 
 
 class CinemaBar:
