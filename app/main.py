@@ -4,7 +4,9 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str,
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
                  movie: str) -> str:
     new_customers = [Customer(food=customer["food"],
                               name=customer["name"])
