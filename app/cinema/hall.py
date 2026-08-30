@@ -1,11 +1,11 @@
 from app.people.customer import Customer
-
+from typing import List
 
 class CinemaHall:
     def __init__(self, number: int):
         self.number = number
 
-    def movie_session(self, movie_name: str, customers,
+    def movie_session(self, movie_name: str, customers: List[Customer],
                       cleaning_staff):
         print(f'"{movie_name}" started in hall number {self.number}.')
 
