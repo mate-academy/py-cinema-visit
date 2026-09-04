@@ -59,8 +59,8 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
    bob = Customer(name="Bob", food="popcorn")
    bob.watch_movie(movie="Madagascar")
    # Bob is watching "Madagascar".
-   ```
-   
+   ```   
+      
    - `cinema_staff.py` - inside this module create `Cleaner` class,
    its `__init__` method takes and stores `name`. 
    This class should have only one method `clean_hall`, this method
@@ -100,7 +100,7 @@ cleaner_name = "Anna"
 movie = "Madagascar"
 cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name, movie=movie)
 # Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
+# Cinema bar sold popcorn to Alex.  
 # "Madagascar" started in hall number 5.
 # Bob is watching "Madagascar".
 # Alex is watching "Madagascar".
