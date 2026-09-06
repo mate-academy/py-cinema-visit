@@ -5,8 +5,8 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(self, number: int) -> None:
-        self.number = number
+    def __init__(self, hall_number: int = 0, number: int = 0) -> None:
+        self.number = [hall_number, number][number != 0]
 
     def movie_session(self,
                       movie_name: str,
