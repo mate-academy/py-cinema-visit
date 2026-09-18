@@ -28,7 +28,7 @@ package create modules:
    class that describes actions during the movie session. Its
    `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
    This class should have only one method `movie_session`, that
-   takes `movie_name`, `customers` - list of a customers
+   takes `movie_name`, `customer.py` - list of a customers
    (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
    instance). This method prints about movie start, calls 
    customers method `watch_movie`, prints about movie end,
@@ -76,7 +76,7 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
 In the module `main.py` you have to import all this classes. Classes
 should be imported by absolute path, that starts with 'app.' with 
 keyword 'from'. Write a
-function `cinema_visit` that takes `movie`, `customers` - a list 
+function `cinema_visit` that takes `movie`, `customer.py` - a list 
 of customers, elements are dicts with 'name' and desired 'food' of a 
 customer, `hall_number` - number of the hall in cinema, 
 `cleaner` - name of the cleaner, that will clean the
