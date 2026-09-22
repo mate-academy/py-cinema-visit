@@ -7,7 +7,7 @@ of what's going on in the cinema
 you decided to keep a record of events in the cinema.
 For this purpose you have to create such modules:
 
-1. In directory `app` create package `cinema`. In this
+1. In directory `app` create package `cinema_staff.py`. In this
 package create modules:  
    - `bar.py` - inside this module create `CinemaBar`
    class that describes work of cinema bar.
