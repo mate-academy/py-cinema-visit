@@ -79,7 +79,7 @@ keyword 'from'. Write a
 function `cinema_visit` that takes `movie`, `customers` - a list 
 of customers, elements are dicts with 'name' and desired 'food' of a 
 customer, `hall_number` - number of the hall in cinema, 
-`cleaner` - name of the cleaner, that will clean the
+`cinema_staff.py` - name of the cleaner, that will clean the
 hall after movie session.
 
 This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
