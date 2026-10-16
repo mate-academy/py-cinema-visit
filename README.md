@@ -7,8 +7,8 @@ of what's going on in the cinema
 you decided to keep a record of events in the cinema.
 For this purpose you have to create such modules:
 
-1. In directory `app` create package `cinema`. In this
-package create modules:  
+1. In directory `app` create package `bar.py`. In this
+   package create modules:  
    - `bar.py` - inside this module create `CinemaBar`
    class that describes work of cinema bar.
    This class should have only one static method `sell_product`,
@@ -47,14 +47,14 @@ cleaning_staff = Cleaner(name="Anna")
 hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cleaning_staff)
 ```
 
-2. In directory `app` create package `people`. In this package
+2. In directory `app` create package `customer.py`. In this package
    create modules:
    - `customer.py` - inside this module create `Customer` class,
    its `__init__` method takes and stores `name`, `food` - food that 
    customer wants to buy in cinema bar. 
    This class should have only one method `watch_movie`, this 
    method takes `movie` and prints what movie customer is watching.
-   
+
    ```python
    bob = Customer(name="Bob", food="popcorn")
    bob.watch_movie(movie="Madagascar")
