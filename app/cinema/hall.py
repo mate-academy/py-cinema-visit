@@ -12,11 +12,14 @@ class CinemaHall:
         customers: list[Customer],
         cleaning_staff: Cleaner
     ) -> None:
-        print(f""""{movie_name}" started in hall number {self.number}.""")
-
+        quote = '"'
+        print(
+            f"{quote}{movie_name}{quote} started in hall number "
+            f"{self.number}."
+        )
         for customer in customers:
             customer.watch_movie(movie=movie_name)
 
-        print(f""""{movie_name}" ended.""")
+        print(f"{quote}{movie_name}{quote} ended.")
 
         cleaning_staff.clean_hall(hall_number=self.number)
