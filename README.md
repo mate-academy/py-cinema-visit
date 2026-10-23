@@ -14,7 +14,8 @@ package create modules:
    This class should have only one static method `sell_product`,
    that takes `product` - name of the product that customer wants
    and `customer` - `Customer` instance, that means customer.
-   The `sell_product` method sells a product to the customer and displays which product was sold and to whom.
+   The `sell_product` method sells a product to the customer and displays which product 
+   - was sold and to whom.
    
    
    ```python
@@ -85,7 +86,8 @@ hall after movie session.
 This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
 First, the cinema bar should sell food to customers. To do this, you can use the `CinemaBar`
 class without creating an instance. Then, the cinema hall should schedule a movie session,
-and finally, a cleaner should clean the cinema hall.  We expect each class to work with the provided data,
+and finally, a cleaner should clean the cinema hall.  We expect each class to work with the 
+provided data,
 accepting parameters in the correct order and having the necessary methods.
 No additional checks or error handling are needed!
 
