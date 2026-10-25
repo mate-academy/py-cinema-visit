@@ -62,10 +62,10 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
    ```
    
    - `cinema_staff.py` - inside this module create `Cleaner` class,
-   its `__init__` method takes and stores `name`. 
-   This class should have only one method `clean_hall`, this method
-   takes `hall_number` - number of hall that cleaner have to clean and
-   prints that cleaner is cleaning that hall.
+     its `__init__` method takes and stores `name`.
+     This class should have only one method `clean_hall`, this method
+     takes `number` - number of hall that cleaner have to clean and
+     prints that cleaner is cleaning that hall.
 
    ```python
    anna = Cleaner(name="Anna")
@@ -78,7 +78,7 @@ should be imported by absolute path, that starts with 'app.' with
 keyword 'from'. Write a
 function `cinema_visit` that takes `movie`, `customers` - a list 
 of customers, elements are dicts with 'name' and desired 'food' of a 
-customer, `hall_number` - number of the hall in cinema, 
+customer, `number` - number of the hall in cinema, 
 `cleaner` - name of the cleaner, that will clean the
 hall after movie session.
 
