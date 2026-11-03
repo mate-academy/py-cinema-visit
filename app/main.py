@@ -1,3 +1,4 @@
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
@@ -5,10 +6,10 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-    movie: str,
-    customers: list[dict],
+    customers: list,
     hall_number: int,
-    cleaner: str
+    cleaner: str,
+    movie: str
 ) -> None:
     customer_list = [
         Customer(name=person["name"], food=person["food"])
@@ -21,7 +22,7 @@ def cinema_visit(
             customer=customer
         )
 
-    hall = CinemaHall(hall_number=hall_number)
+    hall = CinemaHall(number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
     hall.movie_session(
