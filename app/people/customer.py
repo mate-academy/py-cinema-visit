@@ -6,5 +6,5 @@ class Customer:
     def __str__(self) -> str:
         return str(self.name)
 
-    def watch_movie(self, movie: str) -> str:
+    def watch_movie(self, movie: str) -> None:
         print(f'{self.name} is watching "{movie}".')
