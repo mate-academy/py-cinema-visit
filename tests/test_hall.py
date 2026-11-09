@@ -2,9 +2,9 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.cinema.hall import CinemaHall
-from app.people.cinema_staff import Cleaner
-from app.people.customer import Customer
+from app import CinemaHall
+from app import Cleaner
+from app import Customer
 
 
 def test_cinema_hall_constructor():
@@ -12,7 +12,7 @@ def test_cinema_hall_constructor():
     assert hasattr(ch, "number"), (
         "CinemaHall instance should have 'number' attribute"
     )
-    assert ch.number == 6, (
+    assert ch.hall_number == 6, (
         f"Value of attribute 'number' should equal to 6 when "
         f"instance is created by 'CinemaHall(number=6)'"
     )
