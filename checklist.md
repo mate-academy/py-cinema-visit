@@ -23,7 +23,7 @@ def long_function_name(var_one, var_two,
 **Good example:**
 
 ```python
-from app import Component
+from app.module import Component
 ```
 
 **Bad example:**

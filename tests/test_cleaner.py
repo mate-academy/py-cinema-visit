@@ -1,8 +1,9 @@
+import pytest
 import io
 
 from contextlib import redirect_stdout
 
-from app import Cleaner
+from app.people.cinema_staff import Cleaner
 
 
 def test_cleaner_constructor():
