@@ -13,9 +13,8 @@ def cinema_visit(
 
     customers_list = []
     for customer in customers:
-        name, food = customer.keys()
         customers_list.append(
-            Customer(name=customer[name], food=customer[food])
+            Customer(name=customer["name"], food=customer["food"])
         )
 
     cinema_hall = CinemaHall(number=hall_number)
