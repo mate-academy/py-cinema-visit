@@ -3,15 +3,8 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(
-        self,
-        hall_number: int | None = None,
-        *,
-        number: int | None = None
-    ) -> None:
-        self.number = (
-            hall_number if hall_number is not None else number
-        )
+    def __init__(self, number: int) -> None:
+        self.number = number
 
     def movie_session(
         self,
