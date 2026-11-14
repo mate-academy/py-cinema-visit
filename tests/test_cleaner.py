@@ -1,4 +1,3 @@
-import pytest
 import io
 
 from contextlib import redirect_stdout
@@ -19,7 +18,7 @@ def test_cleaner_constructor():
 
 def test_cleaner_clean_hall():
     name = "Anatoly"
-    cleaner = Cleaner(name=name)
+    cleaner = Cleaner(name)
     hall_number = 9
     f = io.StringIO()
 
