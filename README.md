@@ -26,7 +26,7 @@ package create modules:
 
    - `hall.py` - inside this module create `CinemaHall`
    class that describes actions during the movie session. Its
-   `__init__` method takes and stores ONLY the `number `of the hall in the cinema.
+   `__init__` method takes and stores ONLY the `number` of the hall in the cinema.
    This class should have only one method `movie_session`, that
    takes `movie_name`, `customers` - list of a customers
    (`Customer` instances), `cleaning_staff` - cleaner (`Cleaner` 
@@ -36,7 +36,7 @@ package create modules:
    that everything listed above will be performed in `movie_session` function.
 
 ```python
-hall = CinemaHall(hall_number=5)
+hall = CinemaHall(number=5)
 movie_name = "Madagascar"
 customers = [
     Customer(name="Bob", food="Coca-cola"),
@@ -76,11 +76,11 @@ hall.movie_session(movie_name=movie_name, customers=customers, cleaning_staff=cl
 In the module `main.py` you have to import all this classes. Classes
 should be imported by absolute path, that starts with 'app.' with 
 keyword 'from'. Write a
-function `cinema_visit` that takes `movie`, `customers` - a list 
-of customers, elements are dicts with 'name' and desired 'food' of a 
-customer, `hall_number` - number of the hall in cinema, 
-`cleaner` - name of the cleaner, that will clean the
-hall after movie session.
+function `cinema_visit` that takes these parameters in this order:
+`customers` - a list of customers, elements are dicts with 'name'
+and desired 'food' of a customer, `hall_number` - number of the hall
+in cinema, `cleaner` - name of the cleaner, that will clean the
+hall after movie session, and `movie` - name of the movie.
 
 This function should create instances of `Customer`, `CinemaHall`, and `Cleaner`.
 First, the cinema bar should sell food to customers. To do this, you can use the `CinemaBar`
