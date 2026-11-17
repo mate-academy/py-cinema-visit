@@ -2,17 +2,16 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 class CinemaHall:
-    def __init__(self, hall_number: int) -> None:
-        self.hall_number = hall_number
+    def __init__(self, number: int) -> None:
+        self.number = number
     
     def movie_session(
         self,
         movie_name: str,
-        customers: list[dict],
+        customers: list[Customer],
         cleaning_staff: Cleaner) -> None:
-        print(f"\"{movie_name}\" started in hall number {self.hall_number}.")
+        print(f"\"{movie_name}\" started in hall number {self.number}.")
         for customer in customers:
-            c_obj = Customer(customer["name"], customer["food"])
-            c_obj.watch_movie(movie_name)
+            customer.watch_movie(movie_name)
         print(f"\"{movie_name}\" ended.")
-        cleaning_staff.clean_hall(self.hall_number)
+        cleaning_staff.clean_hall(self.number)
