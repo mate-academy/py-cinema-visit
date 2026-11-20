@@ -9,7 +9,7 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
 
     bar = CinemaBar()
     for patron in patrons:
-        bar.sell_product(patron, patron.food)
+        bar.sell_product(patron.food, patron)
 
     cleaning_staff = Cleaner(cleaner)
     hall = CinemaHall(hall_number)
