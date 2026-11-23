@@ -15,7 +15,4 @@ class CinemaHall:
             customer.watch_movie(movie_name)
 
         print(f'"{movie_name}" ended.')
-        self.clean_hall(cleaning_staff)
-
-    def clean_hall(self, cleaning_staff: Cleaner) -> None:
         cleaning_staff.clean_hall(self.number)
