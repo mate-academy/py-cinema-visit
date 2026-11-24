@@ -6,4 +6,4 @@ class Cleaner:
         print(
             f"Cleaner {self.name} is cleaning "
             f"hall number {hall_number}."
-        )м
+        )
